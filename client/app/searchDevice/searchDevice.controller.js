@@ -49,6 +49,7 @@
                 };
 
                 $scope.search = function(){
+                    //code to fetch devices based on the search criteria
                     alert("Searching...");
                 };
 
