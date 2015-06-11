@@ -1,5 +1,5 @@
 {
-  "name": "HoneyBee",
+  "name": "Project-HoneyBee",
   "version": "0.0.1",
   "devDependencies": {
     "connect-livereload": "~0.5.3",

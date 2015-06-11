@@ -1,5 +1,6 @@
 (function () {
   'use strict';
+    // Add all the application dependencies here
   angular.module('app', [
         'ngRoute'
       ,'ngAnimate'

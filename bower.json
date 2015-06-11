@@ -1,5 +1,5 @@
 {
-  "name": "HoneyBee",
+  "name": "Project-HoneyBee",
   "version": "0.0.1",
   "dependencies": {
     "jquery": "~2.1.0",
@@ -33,7 +33,7 @@
     "flot.tooltip": "~0.8.0",
     "angular-loading-bar": "~0.7.1",
     "angular-scroll": "~0.7.0"
-    
+
   },
   "resolutions": {
     "jquery": "~2.1.0",

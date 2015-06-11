@@ -2,7 +2,7 @@
 var LIVERELOAD_PORT, lrSnippet, mountFolder;
 
 LIVERELOAD_PORT = 35728;
-
+console.log("<%= yeoman.app %>");
 lrSnippet = require("connect-livereload")({
   port: LIVERELOAD_PORT
 });
@@ -56,7 +56,7 @@ module.exports = function(grunt) {
     },
     connect: {
       options: {
-        port: 9000,
+        port: 9090,
         hostname: "localhost"
       },
       livereload: {
@@ -119,8 +119,9 @@ module.exports = function(grunt) {
         files: {
           "<%= yeoman.app %>/index.html": [
             "<%= yeoman.app %>/app/**/*.module.js",
+            "<%= yeoman.app %>/app/**/*.controller.js",
             "<%= yeoman.app %>/app/**/*.js",
-            "!" + "<%= yeoman.app %>/**/*.spec.js"
+            "!<%= yeoman.app %>/**/*.spec.js"
           ]
         }
       },

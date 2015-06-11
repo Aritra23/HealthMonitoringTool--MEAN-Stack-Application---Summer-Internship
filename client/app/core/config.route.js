@@ -16,7 +16,7 @@
                 'mail/compose', 'mail/inbox', 'mail/single',
                 'app/tasks', 'app/calendar',
                 'test/testpage',
-                'cvd/search'
+                '/search'
             ]
 
 
@@ -35,8 +35,8 @@
             });
 
             $routeProvider
-                .when('/', {redirectTo: '/cvd/search'})
-                .when('/cvd/search', {templateUrl: 'app/searchDevice/CVD/search.html'})
+                .when('/', {redirectTo: '/search'})
+                .when('/search', {templateUrl: 'app/searchDevice/search.html'})
                 .when('/dashboard', {templateUrl: 'app/dashboard/dashboard.html'})
                 .when('/404', {templateUrl: 'app/page/404.html'})
                 .otherwise({ redirectTo: '/404'});
