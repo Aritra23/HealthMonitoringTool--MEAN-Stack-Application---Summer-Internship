@@ -2,7 +2,7 @@
 var LIVERELOAD_PORT, lrSnippet, mountFolder;
 
 LIVERELOAD_PORT = 35728;
-console.log("<%= yeoman.app %>");
+
 lrSnippet = require("connect-livereload")({
   port: LIVERELOAD_PORT
 });

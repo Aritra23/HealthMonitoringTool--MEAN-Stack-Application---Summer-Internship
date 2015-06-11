@@ -15,35 +15,64 @@
               {name : "COPD", selected : "false"},
               {name : "Atrial Fibrillation", selected : "false"},
               {name : "Diabetes", selected : "false"}];
-          //selected diseases
-          $scope.selection = [];
+
+          //selection list
+          $scope.diseaseSelection = [];
+          $scope.riskSelection = [];
+
+          //helper function to convert array to JSON format for checkbox implementation
+          var convertArrToJson = function(arr){
+              for(var val in arr){
+                  arr[val] = {name : arr[val], selected : "false"};
+              }
+              return arr;
+          };
 
           // hardcoding risk factors
-          $scope.riskFactors = ["Weight Loss", "BMI", "LDL Cholesterol", "Diastolic Blood Pressure", "Haemoglobin A1c", "Lack of Physical Activity", "Smoking cessation", "Blood Glucose Fluctuation", "Obesity", "Behavior patterns", "Poor Diet Patterns", "Total Cholesterol", "HDL Cholesterol", "High Triglycerides", "Framingham Risk Score", "Age"];
+          var rf = ["Weight Loss", "BMI", "LDL Cholesterol", "Diastolic Blood Pressure", "Haemoglobin A1c", "Lack of Physical Activity", "Smoking cessation", "Blood Glucose Fluctuation", "Obesity", "Behavior patterns", "Poor Diet Patterns", "Total Cholesterol", "HDL Cholesterol", "High Triglycerides", "Framingham Risk Score", "Age"];
+          $scope.riskFactors = convertArrToJson(rf);
 
           // hardcoding device features
           $scope.deviceFeatures = ["Cost", "Smartphone Connectivity", "BP", "ECG", "HR", "SpO2", "Resp. Rate", "Steps", "Distance", "Calories", "Position", "Sleep", "Glucose", "EEG", "GSR", "Weight", "Fat %", "BMI", "Hydration", "Temperature"];
 
-          $scope.selectedFactors = function selectedFactors() {
+          //filter selection
+          $scope.selectedDiseases = function selectedDiseases() {
               return filterFilter($scope.diseaseList, { selected: true });
           };
+          $scope.selectedRisks = function selectedRisks(){
+              return filterFilter($scope.riskFactors, { selected: true });
+          };
 
-          //watch for changes in disease selection
+          //watchers
           $scope.$watch('diseaseList|filter:{selected:true}', function (nv) {
-              $scope.selection = nv.map(function (item) {
+              $scope.diseaseSelection = nv.map(function (item) {
+                  return item.name;
+              });
+          }, true);
+          $scope.$watch('riskFactors|filter:{selected:true}', function (nv) {
+              $scope.riskSelection = nv.map(function (item) {
                   return item.name;
               });
           }, true);
 
       $scope.isValidateStep1 = function() {
-        //pull risk factors for each disease using a service call or find an optimization
-          if($scope.selection.indexOf("Heart Failure") != -1){
-              $scope.riskFactors = ["Weight", "BMI", "Pulse", "Blood Pressure", "Oxygen Saturation", "Activity"];
+
+        //pull from database risk factors for each disease using a service call or find an optimization
+          if($scope.diseaseSelection.indexOf("Heart Failure") != -1){
+              rf = ["Weight", "BMI", "Pulse", "Blood Pressure", "Oxygen Saturation", "Activity"];
+              $scope.riskFactors = convertArrToJson(rf);
           }
           else{
-              $scope.riskFactors = ["Weight Loss", "BMI", "LDL Cholesterol", "Diastolic Blood Pressure", "Haemoglobin A1c", "Lack of Physical Activity", "Smoking cessation", "Blood Glucose Fluctuation", "Obesity", "Behavior patterns", "Poor Diet Patterns", "Total Cholesterol", "HDL Cholesterol", "High Triglycerides", "Framingham Risk Score", "Age"];
+              rf = ["Weight Loss", "BMI", "LDL Cholesterol", "Diastolic Blood Pressure", "Haemoglobin A1c", "Lack of Physical Activity", "Smoking cessation", "Blood Glucose Fluctuation", "Obesity", "Behavior patterns", "Poor Diet Patterns", "Total Cholesterol", "HDL Cholesterol", "High Triglycerides", "Framingham Risk Score", "Age"];
+              $scope.riskFactors = convertArrToJson(rf);
           }
       };
+
+          // function to validate risk factor selection
+          $scope.isValidateStep2 = function(){
+              // $scope.riskSelection contains the selected risk factors
+
+          };
 
       $scope.search = function(){
               alert("Searching...");

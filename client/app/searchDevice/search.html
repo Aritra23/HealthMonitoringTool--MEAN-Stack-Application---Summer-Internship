@@ -30,13 +30,11 @@
                     <form name="wizard_step1">
                             <div class="form-group input-group">
                                 <label class="ui-checkbox col-md-5" style="padding-left: 0px !important;" ng-repeat="d in diseaseList">
-                                    <input name="selectedFactors[]" type="checkbox" value={{d.name}} ng-model="d.selected"><span ng-bind="d.name"></span>
+                                    <input name="selectedDiseases[]" type="checkbox" value={{d.name}} ng-model="d.selected"><span ng-bind="d.name"></span>
                                 </label>
                             </div>
                     </form>
-                    <buttton class="btn btn-primary"
-                             ng-click="isValidateStep1()"
-                             wz-next>Next</buttton>
+                    <buttton class="btn btn-primary" ng-click="isValidateStep1()" wz-next>Next</buttton>
                 </wz-step>
                 <wz-step title="Symptoms and Risk Factors">
                     <h2>What are the symptoms?</h2>
@@ -44,10 +42,11 @@
                         <h3>Common symptoms</h3>
                         <div class="form-group input-group">
                             <label class="ui-checkbox col-md-5" style="padding-left: 0px !important;" ng-repeat="rf in riskFactors">
-                                <input name="riskfactors" type="checkbox" value={{rf}}><span>{{rf}}</span>
+                                <input name="selectedRisks[]" type="checkbox" value={{rf.name}} ng-model="rf.selected"><span ng-bind="rf.name"></span>
                             </label>
                         </div>
-                        <h3>Unusual symptoms</h3>
+                        <!-- Unusual Symptoms -  Next release :) -->
+                        <!--<h3>Unusual symptoms</h3>
                         <div class="form-group input-group">
                             <input type="text" placeholder="Enter new symptom" class="input-info form-control" ng-model="wizard.symptom" name="unusualSymptoms">
                             <buttton class="btn btn-info" style="display: table-cell;" ng-click="addUnusualSymptom()">Add Symptom</buttton>
@@ -59,15 +58,22 @@
                             <ul>
                                <li ng-repeat="item in unusualList"><span ng-bind="item"></span></li>
                             </ul>
-                        </div>
+                        </div>-->
                     </form>
                     <buttton class="btn btn-primary" wz-previous>Previous</buttton>
-                    <buttton class="btn btn-primary" wz-next>Next</buttton>
+                    <buttton class="btn btn-primary" ng-click="isValidateStep2()" wz-next>Next</buttton>
                 </wz-step>
                 <wz-step title="Device Features">
                     <h2>What would you like to track?</h2>
                     <form name="wizard_step3">
                         <div class="form-group input-group">
+                            <h3>Selected Risks</h3>
+                            <label class="ui-checkbox col-md-5" style="padding-left: 0px !important;" ng-repeat="rs in riskSelection">
+                                <div><span ng-bind="rs"></span></div>
+                            </label>
+                        </div>
+                        <div class="form-group input-group">
+                            <h3>Other available features</h3>
                             <label class="ui-checkbox col-md-5" style="padding-left: 0px !important;" ng-repeat="df in deviceFeatures">
                                 <input name="devicefeatures" type="checkbox" value={{df}}><span ng-bind="df"></span>
                             </label>
