@@ -113,7 +113,8 @@ module.exports = function(grunt) {
     },
     injector: {
       options: {
-        relative: true
+        relative: true,
+          template : "<%= yeoman.app %>/index.html"
       },
       local_dependencies: {
         files: {
