@@ -37,9 +37,9 @@
                     <buttton class="btn btn-primary" ng-click="isValidateStep1()" wz-next>Next</buttton>
                 </wz-step>
                 <wz-step title="Symptoms and Risk Factors">
-                    <h2>What are the symptoms?</h2>
+                    <h2>What are the symptoms/metrics?</h2>
                     <form name="wizard_step2">
-                        <h3>Common symptoms</h3>
+                        <h3>Common symptoms / Key Metrics</h3>
                         <div class="form-group input-group">
                             <label class="ui-checkbox col-md-5" style="padding-left: 0px !important;" ng-repeat="rf in riskFactors">
                                 <input name="selectedRisks[]" type="checkbox" value={{rf.name}} ng-model="rf.selected"><span ng-bind="rf.name"></span>
@@ -67,17 +67,24 @@
                     <h2>What would you like to track?</h2>
                     <form name="wizard_step3">
                         <!--Iterating selected risks-->
-                        <!--<div class="form-group" ng-if="riskSelection.length>0">
-                            <h3>Selected Symptoms</h3>
-                            <div class="ui-accordion" ng-repeat="rs in riskSelection">
-                                <label><span class="label-success label" ng-bind="rs"></span></label>
+                        <div class="form-group" ng-if="riskSelection.length>0">
+                            <h3>Selected metrics</h3>
+                            <div class="panel panel-info" data-ng-controller="CollapseDemoCtrl" ng-repeat="rs in riskSelection">
+                                <div class="panel-heading" ng-click="isCollapsed = !isCollapsed">
+                                    <label><span class="panel-title" ng-bind="rs"></span></label>
+                                </div>
+                                <div class="panel-body collapse" collapse="isCollapsed">
+                                    <label class="ui-checkbox" style="padding-left: 0px !important;">
+                                        <input type="checkbox"><span>Feature</span>
+                                    </label>
+                                </div>
                             </div>
-                        </div>-->
+                        </div>
                         <div class="form-group input-group">
                             <h3>Available features</h3>
                             <label class="ui-checkbox col-md-5" style="padding-left: 0px !important;" ng-repeat="df in deviceFeatures">
                                 <input name="selectedFeatures[]" type="checkbox" value={{df.name}} ng-model="df.selected"><span ng-bind="df.name"></span>
-                                <label><span class="label-info label" style="margin-right: 0.5em">Symptom1</span><span class="label-info label" style="margin-right: 0.5em">Symptom2</span></label>
+                                <label><span class="label-info label span4" style="margin-right: 0.5em">Symptom1</span></label>
                             </label>
                         </div>
                     </form>

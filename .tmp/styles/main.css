@@ -1,4 +1,6 @@
 @charset "UTF-8";
+/*$body-bg:               #f3f3f3 !default;*/
+/*$body-bg:               #f3f3f3 !default;*/
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 @media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/bootstrap\/bootstrap\/_normalize\.scss}line{font-family:\000039}}
 html {
@@ -1414,7 +1416,7 @@ body {
   font-size: 14px;
   line-height: 1.42857;
   color: #767676;
-  background-color: #f3f3f3;
+  background-color: #ffffff;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/bootstrap\/bootstrap\/_scaffolding\.scss}line{font-family:\0000336}}
@@ -1470,7 +1472,7 @@ img {
 .img-thumbnail {
   padding: 4px;
   line-height: 1.42857;
-  background-color: #f3f3f3;
+  background-color: #ffffff;
   border: 1px solid #ddd;
   border-radius: 2px;
   -webkit-transition: all 0.2s ease-in-out;
@@ -3460,7 +3462,7 @@ th {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/bootstrap\/bootstrap\/_tables\.scss}line{font-family:\0000362}}
 .table .table {
-  background-color: #f3f3f3;
+  background-color: #ffffff;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/bootstrap\/bootstrap\/_tables\.scss}line{font-family:\0000375}}
@@ -5307,7 +5309,7 @@ tbody.collapse.in {
 @media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/bootstrap\/bootstrap\/_navs\.scss}line{font-family:\0000396}}
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
   color: #555555;
-  background-color: #f3f3f3;
+  background-color: #ffffff;
   border: 1px solid #ddd;
   border-bottom-color: transparent;
   cursor: default;
@@ -5400,7 +5402,7 @@ tbody.collapse.in {
   .nav-tabs.nav-justified > .active > a:hover,
   .nav-tabs-justified > .active > a:focus,
   .nav-tabs.nav-justified > .active > a:focus {
-    border-bottom-color: #f3f3f3;
+    border-bottom-color: #ffffff;
   }
 }
 
@@ -6426,7 +6428,7 @@ a.badge:hover, a.badge:focus {
   padding: 4px;
   margin-bottom: 20px;
   line-height: 1.42857;
-  background-color: #f3f3f3;
+  background-color: #ffffff;
   border: 1px solid #ddd;
   border-radius: 2px;
   -webkit-transition: border 0.2s ease-in-out;
@@ -12384,7 +12386,7 @@ button.toast-close-button {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/pages\/_err\.scss}line{font-family:\000037}}
 .page-err .err-status {
-  background-color: #f3f3f3;
+  background-color: #ffffff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/pages\/_err\.scss}line{font-family:\000039}}
 .page-err .err-status h1 {
@@ -12568,7 +12570,7 @@ button.toast-close-button {
 .page-tasks .nav-tabs > li.active > a,
 .page-tasks .nav-tabs > li.active > a:hover,
 .page-tasks .nav-tabs > li.active > a:focus {
-  background-color: #f3f3f3;
+  background-color: #ffffff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/pages\/_tasks\.scss}line{font-family:\0000363}}
 .page-tasks .task-list .view {
@@ -12693,7 +12695,7 @@ button.toast-close-button {
 .page-signin .signup-body,
 .page-signup .signin-body,
 .page-signup .signup-body {
-  border-top: 1px solid #f8f8f8;
+  border-top: 1px solid white;
   padding: 20px 10px;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/pages\/_signin_signup\.scss}line{font-family:\0000327}}
@@ -12720,7 +12722,7 @@ button.toast-close-button {
 .page-signup .line-thru:before {
   width: 50px;
   height: 10px;
-  background-color: #f3f3f3;
+  background-color: #ffffff;
   content: '';
   margin: -5px 0 0 -20px;
   left: 50%;
@@ -12732,7 +12734,7 @@ button.toast-close-button {
 .page-signin .line-thru:after,
 .page-signup .line-thru:after {
   width: 100%;
-  border-bottom: 1px solid #d9d9d9;
+  border-bottom: 1px solid #e6e6e6;
   content: '';
   display: block;
   position: absolute;
@@ -13169,7 +13171,8 @@ button.toast-close-button {
   left: 0;
   right: 0;
   height: 100px;
-  background-color: #fff;
+  /*background-color: $reverse;*/
+  background-color: #BDBEC2;
   -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -13178,68 +13181,71 @@ button.toast-close-button {
 @media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\000031}}
   .top-header {
     height: 50px;
-    background-color: #222533;
+    /*background-color: $dark;*/
+    background-color: #FFFFFF;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\0000317}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\0000319}}
 .top-header a:hover {
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\0000322}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\0000324}}
 .top-header .hidden-mobile {
   display: none;
 }
 @media (min-width: 480px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\0000322}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\0000324}}
   .top-header .hidden-mobile {
     display: inline;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\0000329}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\0000331}}
 .top-header .toggle-min {
   display: none;
   z-index: 11;
   position: absolute;
-  left: 180px;
+  left: 200px;
   top: 10px;
   line-height: 30px;
   font-size: 18px;
-  color: #ccc;
+  /*color: #ccc;*/
+  color: #222533;
 }
 @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\0000329}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\0000331}}
   .top-header .toggle-min {
     display: block;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\0000345}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\0000348}}
 .top-header .logo {
   position: absolute;
   width: 100%;
   height: 50px;
-  line-height: 50px;
+  /*line-height: $header_height;*/
   text-align: center;
-  background-color: #222533;
+  /*background-color: $dark;*/
+  background-color: #FFFFFF;
 }
 @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\0000345}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\0000348}}
   .top-header .logo {
     display: inline-block;
     width: 220px;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\0000357}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\0000362}}
 .top-header .logo > a {
   font-size: 24px;
   vertical-align: middle;
   color: #fafafa;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\0000362}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\0000367}}
 .top-header .logo > a .logo-icon {
   color: #fafafa;
   margin-right: 12px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\0000370}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\0000375}}
 .top-header .menu-button {
   display: block;
   position: absolute;
@@ -13249,12 +13255,12 @@ button.toast-close-button {
   padding: 10px 12px;
   border-radius: 4px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\0000378}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\0000383}}
 .top-header .menu-button:hover {
   cursor: pointer;
   background-color: #181a24;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\0000383}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\0000388}}
 .top-header .menu-button .icon-bar {
   display: block;
   width: 22px;
@@ -13262,84 +13268,84 @@ button.toast-close-button {
   border-radius: 1px;
   background-color: #fff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\0000390}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\0000395}}
 .top-header .menu-button .icon-bar + .icon-bar {
   margin-top: 4px;
 }
 @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\0000370}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\0000375}}
   .top-header .menu-button {
     display: none;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003100}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003105}}
 .top-header .dropdown-menu.panel {
   padding: 0;
   white-space: nowrap;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003104}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003109}}
 .top-header .dropdown-menu.panel .panel-heading,
 .top-header .dropdown-menu.panel .panel-footer {
   padding: 10px 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003109}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003114}}
 .top-header .dropdown-menu.panel .list-group-item {
   padding: 10px 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003111}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003116}}
 .top-header .dropdown-menu.panel .list-group-item > a {
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003117}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003122}}
 .top-header .dropdown-menu.panel .media .media-body {
   padding-right: 75px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003125}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003130}}
 .top-header .top-nav {
   width: 100%;
   padding: 60px 0 0;
 }
 @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003125}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003130}}
   .top-header .top-nav {
     padding: 10px 0 0 220px;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003133}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003138}}
 .top-header .top-nav .nav-left,
 .top-header .top-nav .nav-right {
   font-size: 16px;
   line-height: 22px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003138}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003143}}
 .top-header .top-nav .nav-left > li,
 .top-header .top-nav .nav-right > li {
   float: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003141}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003146}}
 .top-header .top-nav .nav-left > li.nav-profile > a,
 .top-header .top-nav .nav-right > li.nav-profile > a {
   padding: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003144}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003149}}
 .top-header .top-nav .nav-left > li.nav-profile .hidden-xs,
 .top-header .top-nav .nav-right > li.nav-profile .hidden-xs {
   padding-right: 8px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003147}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003152}}
 .top-header .top-nav .nav-left > li.nav-profile i,
 .top-header .top-nav .nav-right > li.nav-profile i {
   width: 18px;
   font-size: 16px;
   margin-right: 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003156}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003161}}
 .top-header .top-nav .nav-left > li a:hover, .top-header .top-nav .nav-left > li a:focus,
 .top-header .top-nav .nav-right > li a:hover,
 .top-header .top-nav .nav-right > li a:focus {
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003162}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003167}}
 .top-header .top-nav .nav-left > li > .btn-group > a,
 .top-header .top-nav .nav-left > li > a,
 .top-header .top-nav .nav-right > li > .btn-group > a,
@@ -13351,7 +13357,7 @@ button.toast-close-button {
   border-radius: 22px;
 }
 @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003162}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003167}}
   .top-header .top-nav .nav-left > li > .btn-group > a,
   .top-header .top-nav .nav-left > li > a,
   .top-header .top-nav .nav-right > li > .btn-group > a,
@@ -13360,7 +13366,7 @@ button.toast-close-button {
     color: #fafafa;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003174}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003179}}
 .top-header .top-nav .nav-left > li > .btn-group > a .badge,
 .top-header .top-nav .nav-left > li > a .badge,
 .top-header .top-nav .nav-right > li > .btn-group > a .badge,
@@ -13369,40 +13375,40 @@ button.toast-close-button {
   top: -5px;
   right: -10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003184}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003189}}
 .top-header .top-nav .nav-left > li ul.dropdown-menu a:hover,
 .top-header .top-nav .nav-right > li ul.dropdown-menu a:hover {
   background-color: #1C7EBB;
   color: #fff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003189}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003194}}
 .top-header .top-nav .nav-left > li ul.dropdown-menu .glyphicon,
 .top-header .top-nav .nav-right > li ul.dropdown-menu .glyphicon {
   margin-right: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003217}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003222}}
 .top-header .top-nav .nav-left {
   float: left;
   padding: 0 12px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003220}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003225}}
 .top-header .top-nav .nav-left > li {
   margin-right: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003228}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003233}}
 .top-header .top-nav .nav-right {
   padding: 0 12px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003230}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003235}}
 .top-header .top-nav .nav-right > li {
   margin-left: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003239}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003244}}
 .top-header .langs .list-langs a {
   position: relative;
   padding: 8px 20px 8px 57px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003243}}
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/sections\/_header\.scss}line{font-family:\00003248}}
 .top-header .langs .list-langs a .flag {
   position: absolute;
   top: 7px;
@@ -13467,4 +13473,10 @@ button.toast-close-button {
 @media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/custom\/my-style\.scss}line{font-family:\000031}}
 .nextStyle {
   float: left;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/custom\/my-style\.scss}line{font-family:\000034}}
+.logoImage {
+  height: 100%;
+  width: auto;
 }

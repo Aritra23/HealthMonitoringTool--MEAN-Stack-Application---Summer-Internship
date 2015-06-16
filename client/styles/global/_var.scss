@@ -35,11 +35,12 @@ $skin-light:            #449DD5;
 // $skin-lighter:          #
 // $skin-bright:           #
 $dark:                  #222533;
+$headercolor:           #FFFFFF;
 $bright:                #fafafa;
 $reverse:               #fff;
 
 $state-default-bg:      #f6f6f6; // also: pagination bg
-$state-default-border:  darken(adjust-hue($state-default-bg, -10), 5%); 
+$state-default-border:  darken(adjust-hue($state-default-bg, -10), 5%);
 
 
 //== Scaffolding
@@ -47,7 +48,8 @@ $state-default-border:  darken(adjust-hue($state-default-bg, -10), 5%);
 // ## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-$body-bg:               #f3f3f3 !default;
+/*$body-bg:               #f3f3f3 !default;*/
+$body-bg:               #ffffff !default;
 //** Global text color on `<body>`.
 $text-color:            #767676 !default;
 

@@ -5,11 +5,13 @@
     left: 0;
     right: 0;
     height:( $header_height * 2);
-    background-color: $reverse;
+    /*background-color: $reverse;*/
+    background-color: #BDBEC2;
     @include box-shadow(0 1px 2px rgba(0,0,0,.1));
     @media (min-width:$screen-sm) {
         height: $header_height;
-        background-color: $dark;
+        /*background-color: $dark;*/
+        background-color: $headercolor;
     }
 
     // shared
@@ -30,11 +32,12 @@
         display: none;
         z-index: 11;
         position: absolute;
-        left: 180px;
+        left: 200px;
         top: 10px;
         line-height: 30px;
         font-size: 18px;
-        color: #ccc;
+        /*color: #ccc;*/
+        color: $dark;
         @media (min-width:$screen-sm) {
             display: block;
         }
@@ -46,9 +49,11 @@
         position: absolute;
         width: 100%;
         height: $header_height;
-        line-height: $header_height;
+        // line height removed to fix the image
+        /*line-height: $header_height;*/
         text-align: center;
-        background-color: $dark;
+        /*background-color: $dark;*/
+        background-color: $headercolor;
         @media (min-width: $screen-sm) {
             display: inline-block;
             width: 220px;
@@ -66,7 +71,7 @@
         }
     }
 
-    // 
+    //
     .menu-button {
         display: block;
         position: absolute;
@@ -96,11 +101,11 @@
         }
     }
 
-    // 
+    //
     .dropdown-menu.panel {
         padding: 0;
         white-space: nowrap;
-        
+
         .panel-heading,
         .panel-footer {
             padding: 10px 15px;
@@ -121,7 +126,7 @@
     }
 
 
-    // 
+    //
     .top-nav {
         width:100%;
         padding: 60px 0 0;
@@ -129,7 +134,7 @@
             padding: 10px 0 0 220px;
         }
 
-        // 
+        //
         .nav-left,
         .nav-right {
             font-size: 16px;
@@ -148,7 +153,7 @@
                         width: 18px;
                         font-size: 16px;
                         margin-right: 5px;
-                    } 
+                    }
                 }
 
                 a {
@@ -180,7 +185,7 @@
 
                 ul.dropdown-menu {
                     // margin-top: 12px;
-                    
+
                     a:hover {
                         background-color: $skin;
                         color: #fff;
@@ -213,7 +218,7 @@
             // }
         }
 
-        // 
+        //
         .nav-left {
             float: left;
             padding: 0 $padding-base-horizontal;
@@ -224,7 +229,7 @@
 
 
 
-        // 
+        //
         .nav-right {
             padding: 0 $padding-base-horizontal;
             > li {
@@ -233,7 +238,7 @@
         }
     }
 
-    // 
+    //
     .langs {
         .list-langs {
             a {

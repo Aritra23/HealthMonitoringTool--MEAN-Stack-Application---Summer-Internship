@@ -2,3 +2,9 @@
 .nextStyle {
   float: left;
 }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/d\:\/Project\%20HoneyBee\/Project-HoneyBee\/client\/styles\/custom\/my-style\.scss}line{font-family:\000034}}
+.logoImage {
+  height: 100%;
+  width: auto;
+}
