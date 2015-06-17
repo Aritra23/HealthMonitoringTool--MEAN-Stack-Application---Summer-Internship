@@ -33,7 +33,7 @@
             };
 
             // hardcoding risk factors
-            var rf = ["Weight Loss", "BMI", "LDL Cholesterol", "Diastolic Blood Pressure", "Haemoglobin A1c", "Lack of Physical Activity", "Smoking cessation", "Blood Glucose Fluctuation", "Obesity", "Behavior patterns", "Poor Diet Patterns", "Total Cholesterol", "HDL Cholesterol", "High Triglycerides", "Framingham Risk Score", "Age"];
+            var rf = ["Weight", "BMI", "Pulse", "Blood Pressure", "Oxygen Saturation", "Activity"];
             $scope.riskFactors = convertArrToJson(rf);
 
             // hardcoding device features
@@ -70,13 +70,30 @@
 
             $scope.isValidateStep1 = function() {
 
+                if($scope.diseaseSelection.length == 0){
+                    $scope.diseaseSelection = ["Heart Failure"];
+                }
+
                 //pull from database risk factors for each disease using a service call or find an optimization
                 if($scope.diseaseSelection.indexOf("Heart Failure") != -1){
                     rf = ["Weight", "BMI", "Pulse", "Blood Pressure", "Oxygen Saturation", "Activity"];
+                    //rf.concat(["Weight", "BMI", "Pulse", "Blood Pressure", "Oxygen Saturation", "Activity"]);
+                    $scope.riskFactors = convertArrToJson(rf);
+
+                }
+                if($scope.diseaseSelection.indexOf("COPD") != -1){
+                    //rf.concat(["Forced Expiratory Volume", "Peak Expiratory Flow", "Pulse", "Blood Pressure", "Oxygen Saturation", "Activity"]);
+                    rf = ["Forced Expiratory Volume", "Peak Expiratory Flow", "Ventilation-Perfusion Ratio","Oxygen Saturation","Tobacco Cessation","Exercise/Activity"];
                     $scope.riskFactors = convertArrToJson(rf);
                 }
-                else{
-                    rf = ["Weight Loss", "BMI", "LDL Cholesterol", "Diastolic Blood Pressure", "Haemoglobin A1c", "Lack of Physical Activity", "Smoking cessation", "Blood Glucose Fluctuation", "Obesity", "Behavior patterns", "Poor Diet Patterns", "Total Cholesterol", "HDL Cholesterol", "High Triglycerides", "Framingham Risk Score", "Age"];
+                if($scope.diseaseSelection.indexOf("Atrial Fibrillation") != -1){
+                    //rf.concat(["Forced Expiratory Volume", "Peak Expiratory Flow", "Pulse", "Blood Pressure", "Oxygen Saturation", "Activity"]);
+                    rf = ["Heart Rate","Heart Rhythm"];
+                    $scope.riskFactors = convertArrToJson(rf);
+                }
+                if($scope.diseaseSelection.indexOf("Atrial Fibrillation") != -1){
+                    //rf.concat(["Forced Expiratory Volume", "Peak Expiratory Flow", "Pulse", "Blood Pressure", "Oxygen Saturation", "Activity"]);
+                    rf = ["Blood Glucose","Weight","Activity/Exercise","HbA1c"];
                     $scope.riskFactors = convertArrToJson(rf);
                 }
             };
