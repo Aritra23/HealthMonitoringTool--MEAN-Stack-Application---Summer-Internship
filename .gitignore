@@ -3,3 +3,4 @@ node_modules/**
 client/bower_components/**
 .idea/**
 .sass-cache/**
+.tmp/**
