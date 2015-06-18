@@ -40,6 +40,9 @@
             var df = ["Cost", "Smartphone Connectivity", "BP", "ECG", "HR", "SpO2", "Resp. Rate", "Steps", "Distance", "Calories", "Position", "Sleep", "Glucose", "EEG", "GSR", "Weight", "Fat %", "BMI", "Hydration", "Temperature"];
             $scope.deviceFeatures = convertArrToJson(df);
 
+            //hardcoding device categories
+            $scope.deviceCategory = ["Body Composition Analyzer","Blood Pressure Monitor","Activity Tracker","Heart Rate Monitor","Pulse Oxymeter"];
+
             //filter selection
             $scope.selectedDiseases = function selectedDiseases() {
                 return filterFilter($scope.diseaseList, { selected: true });
@@ -104,11 +107,6 @@
 
             };
 
-            $scope.search = function(){
-                console.log($scope.featureSelection);
-                alert("Searching...");
-            };
-
             $scope.addUnusualSymptom = function(){
                 if($scope.wizard.symptom != '' && !angular.isUndefined($scope.wizard.symptom)){
                     $scope.unusualList.push($scope.wizard.symptom);
@@ -123,6 +121,7 @@
 
             return $scope.finishedWizard = function() {
                 //find device call
+                alert("Thank You. Subscription has been made to the patient");
             };
 
             }
