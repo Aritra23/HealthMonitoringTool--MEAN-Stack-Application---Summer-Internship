@@ -25,8 +25,8 @@
         <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> SEARCH DEVICE</strong></div>
         <div class="panel-body" data-ng-controller="searchDeviceCtrl">
             <wizard on-finish="finishedWizard()" class="wizard-steps-container" hide-indicators="true">
-                <wz-step title="Disease Diagnosis">
-                    <h2>Select disease to diagnose : </h2>
+                <wz-step title="Disease Selection">
+                    <h2>Select disease</h2>
                     <form name="wizard_step1">
                             <div class="form-group input-group">
                                 <label class="ui-checkbox col-md-5" style="padding-left: 0px !important;" ng-repeat="d in diseaseList">
@@ -36,13 +36,16 @@
                     </form>
                     <buttton class="btn btn-primary" ng-click="isValidateStep1()" wz-next>Next</buttton>
                 </wz-step>
-                <wz-step title="Symptoms and Risk Factors">
-                    <h2>What are the symptoms/metrics?</h2>
+                <wz-step title="Key Metrics">
+                    <h2>{{diseaseSelection[0]}} Key Metrics</h2>
                     <form name="wizard_step2">
-                        <h3>Common symptoms / Key Metrics</h3>
                         <div class="form-group input-group">
-                            <label class="ui-checkbox col-md-5" style="padding-left: 0px !important;" ng-repeat="rf in riskFactors">
-                                <input name="selectedRisks[]" type="checkbox" value={{rf.name}} ng-model="rf.selected"><span ng-bind="rf.name"></span>
+                            <label class="ui-checkbox ui-resizable col-md-5" data-ng-controller="CollapseDemoCtrl" style="padding-left: 0px !important;" ng-repeat="rf in riskFactors">
+                                <input name="selectedRisks[]" type="checkbox" value={{rf.name}} ng-model="rf.selected" ng-click="isCollapsed = !isCollapsed"><span ng-bind="rf.name"></span>
+                                <ul class="collapse" collapse="!isCollapsed">
+                                       <li class="list-group-item"><label class="ui-checkbox"><span class="b"> Current</span> <input type="text" class="input-collapse"></label>
+                                        <label class="ui-checkbox"><span class="b"> Limit</span> <input type="text" class="input-collapse"></label> </li>
+                                </ul>
                             </label>
                         </div>
                         <!-- Unusual Symptoms -  Next release :) -->
@@ -63,33 +66,27 @@
                     <buttton class="btn btn-primary" wz-previous>Previous</buttton>
                     <buttton class="btn btn-primary" ng-click="isValidateStep2()" wz-next>Next</buttton>
                 </wz-step>
-                <wz-step title="Device Features">
-                    <h2>What would you like to track?</h2>
+                <wz-step title="Device Category">
+                    <h2>Recommended Device Categories</h2>
                     <form name="wizard_step3">
                         <!--Iterating selected risks-->
-                        <div class="form-group" ng-if="riskSelection.length>0">
-                            <h3>Selected metrics</h3>
-                            <div class="panel panel-info" data-ng-controller="CollapseDemoCtrl" ng-repeat="rs in riskSelection">
-                                <div class="panel-heading" ng-click="isCollapsed = !isCollapsed">
-                                    <label><span class="panel-title" ng-bind="rs"></span></label>
-                                </div>
-                                <div class="panel-body collapse" collapse="isCollapsed">
-                                    <label class="ui-checkbox" style="padding-left: 0px !important;">
-                                        <input type="checkbox"><span>Feature</span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
                         <div class="form-group input-group">
-                            <h3>Available features</h3>
-                            <label class="ui-checkbox col-md-5" style="padding-left: 0px !important;" ng-repeat="df in deviceFeatures">
-                                <input name="selectedFeatures[]" type="checkbox" value={{df.name}} ng-model="df.selected"><span ng-bind="df.name"></span>
-                                <label><span class="label-info label span4" style="margin-right: 0.5em">Symptom1</span></label>
-                            </label>
+                            <ul class="ui-checkbox col-md-5" style="padding-left: 0px !important;" ng-if="riskSelection.length>0" ng-repeat="dc in deviceCategory">
+                                <li class="list-group-item"><span ng-bind="dc"></span> <label class="badge" wz-next>See devices</label></li>
+                            </ul>
+                            <div ng-if="riskSelection.length == 0" class="callout callout-danger">
+                                <h4>No recommendations available</h4>
+                                <strong>Additional Info : </strong>
+                                <p>Please ensure to make a selection in the previous step if not selected any metrics. There may be no available devices for current selection.</p>
+                            </div>
                         </div>
                     </form>
                     <buttton class="btn btn-primary" wz-previous>Previous</buttton>
-                    <buttton type="submit" class="btn btn-primary" ng-click="search()" wz-next>Find Device</buttton>
+                    <buttton type="submit" class="btn btn-primary" wz-finish>Finish</buttton>
+                </wz-step>
+                <wz-step title="Device List">
+                    <h2>Devices</h2>
+                    <buttton class="btn btn-primary" wz-previous>Back</buttton>
                 </wz-step>
             </wizard>
         </div>

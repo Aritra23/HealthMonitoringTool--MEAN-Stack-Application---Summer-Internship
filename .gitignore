@@ -1,5 +1,6 @@
 # Untracked Files
 node_modules/**
 client/bower_components/**
-.idea/workspace.xml
-.idea/encodings.xml
+.idea/**
+.sass-cache/**
+.tmp/**

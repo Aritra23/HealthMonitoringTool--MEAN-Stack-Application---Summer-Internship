@@ -8,3 +8,8 @@
   height: 100%;
   width: auto;
 }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/custom\/my-style\.scss}line{font-family:\000038}}
+.input-collapse {
+  width: 70px;
+}
