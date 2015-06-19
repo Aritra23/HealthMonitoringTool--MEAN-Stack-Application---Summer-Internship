@@ -1,5 +1,7 @@
 // overrides Bootstrap
 .panel {
+    //added this to enhance the look for the disease options
+    box-shadow: 30px 30px 30px rgba(0, 0, 0, 0.1);
     .panel-heading {
         text-transform: uppercase;
     }
@@ -122,7 +124,7 @@
     }
 }
 
-// 
+//
 .panel-profile {
     border: none;
 

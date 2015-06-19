@@ -1,52 +1,61 @@
 <div class="page">
-    <!--<section class="panel panel-default">
-        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Device Search</strong></div>
-        <div class="panel-body">
-            <div data-ui-wizard-form>
-                <h1>Primary Risk Factors</h1>
-                <div>
-                    <form>
-                        <label class="ui-checkbox col-md-5" style="padding-left: 0px !important;" ng-repeat="rf in riskFactors">
-                            <input name="riskfactors" type="checkbox" value={{rf}}><span>{{rf}}</span>
-                        </label>
-                    </form>
-                </div>
-
-                <h1>Secondary Risk Factors</h1>
-                <div>Second Content</div>
-
-                <h1>Device Features</h1>
-                <div>Third Content</div>
-            </div>
-        </div>
-    </section>-->
-
     <section class="panel panel-default">
         <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> SEARCH DEVICE</strong></div>
         <div class="panel-body" data-ng-controller="searchDeviceCtrl">
-            <wizard on-finish="finishedWizard()" class="wizard-steps-container" hide-indicators="true">
+            <wizard on-finish="notify('success')" class="wizard-steps-container" hide-indicators="true">
                 <wz-step title="Disease Selection">
-                    <h2>Select disease</h2>
+                    <h2 class="size-h2">Select disease</h2>
+                    <div class="divider divider-lg"></div>
                     <form name="wizard_step1">
-                            <div class="form-group input-group">
+                            <!--<div class="form-group input-group">
                                 <label class="ui-checkbox col-md-5" style="padding-left: 0px !important;" ng-repeat="d in diseaseList">
                                     <input name="selectedDiseases[]" type="checkbox" value={{d.name}} ng-model="d.selected"><span ng-bind="d.name"></span>
                                 </label>
+                            </div>-->
+                        <div class="row">
+                            <div class="col-md-6 col-lg-6" ng-repeat="d in diseaseList">
+                                <section class="panel panel-box info-box">
+                                    <div class="panel-left panel-item bg-danger">
+                                        <i class="fa text-large stat-icon fa-heartbeat"></i>
+                                    </div>
+                                    <div class="panel-right panel-item bg-reverse">
+                                        <p class="size-h3 no-margin"><input name="selectedDiseases[]" type="checkbox" value={{d.name}} ng-model="d.selected"> <span ng-bind="d.name"></span></p>
+                                    </div>
+                                </section>
                             </div>
+                        </div>
                     </form>
-                    <buttton class="btn btn-primary" ng-click="isValidateStep1()" wz-next>Next</buttton>
+                    <span class="help-block">Please click on the checkbox to select a disease</span>
+                    <buttton class="btn btn-primary nextStyle" ng-click="isValidateStep1()" wz-next>Next</buttton>
                 </wz-step>
                 <wz-step title="Key Metrics">
-                    <h2>{{diseaseSelection[0]}} Key Metrics</h2>
+                    <h2 class="size-h2">{{diseaseSelection[0]}} Key Metrics</h2>
+                    <div class="divider divider-lg"></div>
                     <form name="wizard_step2">
                         <div class="form-group input-group">
-                            <label class="ui-checkbox ui-resizable col-md-5" data-ng-controller="CollapseDemoCtrl" style="padding-left: 0px !important;" ng-repeat="rf in riskFactors">
+                            <div class="row-fluid">
+                            <label class="ui-checkbox col-md-5" data-ng-controller="CollapseDemoCtrl" style="padding-left: 0px !important;" ng-repeat="rf in riskFactors">
                                 <input name="selectedRisks[]" type="checkbox" value={{rf.name}} ng-model="rf.selected" ng-click="isCollapsed = !isCollapsed"><span ng-bind="rf.name"></span>
                                 <ul class="collapse" collapse="!isCollapsed">
-                                       <li class="list-group-item"><label class="ui-checkbox"><span class="b"> Current</span> <input type="text" class="input-collapse"></label>
-                                        <label class="ui-checkbox"><span class="b"> Limit</span> <input type="text" class="input-collapse"></label> </li>
+                                       <li class="list-group-item"><label class="ui-checkbox"><span class="b"> Current</span> <input type="text" class="input-collapse" placeholder=" units"></label>
+                                        <label class="ui-checkbox"><span class="b"> Limit</span> <input type="text" class="input-collapse" placeholder=" units"></label> </li>
                                 </ul>
                             </label>
+                            </div>
+                            <div class="row-fluid" data-ng-controller="CollapseDemoCtrl">
+                                <h2 class="size-h2 col-md-12" style="padding-left: 0;" ng-click="isCollapsed = !isCollapsed;">More Key Metrics <span class="fa fa-angle-double-right"></span></h2>
+                                <div class="row-fluid" collapse="!isCollapsed">
+                                <label class="ui-checkbox col-md-5" data-ng-controller="CollapseDemoCtrl" style="padding-left: 0px !important;" ng-repeat="rf in otherRisks">
+                                    <input name="selectedRisks[]" type="checkbox" value={{rf.name}} ng-model="rf.selected" ng-click="isCollapsed = !isCollapsed"><span ng-bind="rf.name"></span>
+                                    <ul class="collapse" collapse="!isCollapsed">
+                                        <li class="list-group-item">
+                                            <label class="ui-checkbox"><span class="b"> Current</span> <input type="text" placeholder=" units" class="input-collapse"></label>
+                                            <label class="ui-checkbox"><span class="b"> Limit</span> <input type="text" placeholder=" units" class="input-collapse"></label>
+                                        </li>
+                                    </ul>
+                                </label>
+                                </div>
+                            </div>
                         </div>
                         <!-- Unusual Symptoms -  Next release :) -->
                         <!--<h3>Unusual symptoms</h3>
@@ -63,16 +72,17 @@
                             </ul>
                         </div>-->
                     </form>
-                    <buttton class="btn btn-primary" wz-previous>Previous</buttton>
-                    <buttton class="btn btn-primary" ng-click="isValidateStep2()" wz-next>Next</buttton>
+                    <buttton class="btn btn-primary prevStyle" wz-previous>Previous</buttton>
+                    <buttton class="btn btn-primary nextStyle" ng-click="isValidateStep2()" wz-next>Next</buttton>
                 </wz-step>
                 <wz-step title="Device Category">
-                    <h2>Recommended Device Categories</h2>
+                    <h2 class="size-h2">Recommended Device Categories</h2>
+                    <div class="divider divider-lg"></div>
                     <form name="wizard_step3">
                         <!--Iterating selected risks-->
                         <div class="form-group input-group">
-                            <ul class="ui-checkbox col-md-5" style="padding-left: 0px !important;" ng-if="riskSelection.length>0" ng-repeat="dc in deviceCategory">
-                                <li class="list-group-item"><span ng-bind="dc"></span> <label class="badge" wz-next>See devices</label></li>
+                            <ul class="ui-checkbox col-md-12" style="padding-left: 0px !important;" ng-if="riskSelection.length>0" ng-repeat="dc in deviceCategory">
+                                <li class="list-group-item" wz-next><span ng-bind="dc"></span> <button type="button" class="btn btn-info badge badge-info">View Devices</button></li>
                             </ul>
                             <div ng-if="riskSelection.length == 0" class="callout callout-danger">
                                 <h4>No recommendations available</h4>
@@ -81,16 +91,57 @@
                             </div>
                         </div>
                     </form>
-                    <buttton class="btn btn-primary" wz-previous>Previous</buttton>
-                    <buttton type="submit" class="btn btn-primary" wz-finish>Finish</buttton>
+                    <buttton class="btn btn-primary prevStyle" wz-previous>Previous</buttton>
+                    <buttton type="submit" class="btn btn-primary nextStyle" wz-finish>Finish</buttton>
                 </wz-step>
                 <wz-step title="Device List">
-                    <h2>Devices</h2>
-                    <buttton class="btn btn-primary" wz-previous>Back</buttton>
+                    <h2 class="size-h2">Devices</h2>
+                    <div class="divider divider-lg"></div>
+                    <form name="wizard_step4">
+                    <div class="row">
+                        <div class="col-md-3 col-xsm-6">
+                            <section class="pricing-table pricing-table-success">
+                                <header>Image of the device</header>
+                                <div class="pricing-body">
+                                    <div class="pricing-price">
+                                        <strong>Withings Smart Scale</strong>
+                                    </div>
+                                    <ul>
+                                        <li><input type="checkbox"><strong> Cost : </strong> $149.99 </li>
+                                        <li><input type="checkbox"><strong> Air quality Screening : </strong> Yes </li>
+                                        <li><input type="checkbox"><strong> Daily Report : </strong> Yes </li>
+                                        <li><input type="checkbox"><strong> Body Fat : </strong> Yes </li>
+                                    </ul>
+                                </div>
+                                <footer>
+                                    <a href="javascript:;" class="btn btn-success">Prescribe this</a>
+                                </footer>
+                            </section>
+                        </div>
+                        <div class="col-md-3 col-xsm-6">
+                            <section class="pricing-table pricing-table-success">
+                                <header>Image of the device</header>
+                                <div class="pricing-body">
+                                    <div class="pricing-price">
+                                        <strong>Withings Smart Scale</strong>
+                                    </div>
+                                    <ul>
+                                        <li><input type="checkbox"><strong> Cost : </strong> $149.99 </li>
+                                        <li><input type="checkbox"><strong> Air quality Screening : </strong> Yes </li>
+                                        <li><input type="checkbox"><strong> Daily Report : </strong> Yes </li>
+                                        <li><input type="checkbox"><strong> Body Fat : </strong> Yes </li>
+                                    </ul>
+                                </div>
+                                <footer>
+                                    <a href="javascript:;" class="btn btn-success">Prescribe this</a>
+                                </footer>
+                            </section>
+                        </div>
+                    </div>
+                    </form>
+                    <buttton class="btn btn-primary prevStyle" wz-previous>Back</buttton>
                 </wz-step>
             </wizard>
         </div>
     </section>
-
-
 </div>
