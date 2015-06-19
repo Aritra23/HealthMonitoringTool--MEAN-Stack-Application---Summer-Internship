@@ -14,22 +14,24 @@
                             </div>-->
                         <div class="row">
                             <div class="col-md-6 col-lg-6" ng-repeat="d in diseaseList">
-                                <section class="panel panel-box info-box">
+                                <section class="panel panel-box info-box" wz-next ng-click="isValidateStep1(d.name)">
                                     <div class="panel-left panel-item bg-danger">
                                         <i class="fa text-large stat-icon fa-heartbeat"></i>
                                     </div>
-                                    <div class="panel-right panel-item bg-reverse">
-                                        <p class="size-h3 no-margin"><input name="selectedDiseases[]" type="checkbox" value={{d.name}} ng-model="d.selected"> <span ng-bind="d.name"></span></p>
+                                    <div class="panel-right panel-item bg-reverse" style="vertical-align: middle">
+                                        <!--<p class="size-h3 no-margin"><input name="selectedDiseases[]" type="checkbox" value={{d.name}} ng-model="d.selected"> <span ng-bind="d.name"></span></p>-->
+                                        <p class="size-h3 no-margin"><label><span ng-bind="d.name"></span></label></p>
                                     </div>
                                 </section>
                             </div>
                         </div>
                     </form>
-                    <span class="help-block">Please click on the checkbox to select a disease</span>
-                    <buttton class="btn btn-primary nextStyle" ng-click="isValidateStep1()" wz-next>Next</buttton>
+                    <!--<buttton class="btn btn-primary nextStyle" ng-click="isValidateStep1()" wz-next>Next</buttton>-->
                 </wz-step>
                 <wz-step title="Key Metrics">
-                    <h2 class="size-h2">{{diseaseSelection[0]}} Key Metrics</h2>
+                    <!--If multiselect enabled then this will be needed-->
+                    <!--<h2 class="size-h2">{{diseaseSelection[0]}} Key Metrics</h2>-->
+                    <h2 class="size-h2">{{diseaseSelection}} Key Metrics</h2>
                     <div class="divider divider-lg"></div>
                     <form name="wizard_step2">
                         <div class="form-group input-group">
@@ -37,8 +39,10 @@
                             <label class="ui-checkbox col-md-5" data-ng-controller="CollapseDemoCtrl" style="padding-left: 0px !important;" ng-repeat="rf in riskFactors">
                                 <input name="selectedRisks[]" type="checkbox" value={{rf.name}} ng-model="rf.selected" ng-click="isCollapsed = !isCollapsed"><span ng-bind="rf.name"></span>
                                 <ul class="collapse" collapse="!isCollapsed">
-                                       <li class="list-group-item"><label class="ui-checkbox"><span class="b"> Current</span> <input type="text" class="input-collapse" placeholder=" units"></label>
-                                        <label class="ui-checkbox"><span class="b"> Limit</span> <input type="text" class="input-collapse" placeholder=" units"></label> </li>
+                                       <li class="metricInput list-group-item-success">
+                                        <label class="ui-checkbox" style="margin: 10px 20px 10px 20px;"><span class="b"> Current : </span> <input type="text" class="input-collapse" placeholder=" units"></label>
+                                        <label class="ui-checkbox" style="margin: 10px 20px 10px 20px;"><span class="b"> Limit : </span> <input type="text" class="input-collapse" placeholder=" units"></label>
+                                       </li>
                                 </ul>
                             </label>
                             </div>
@@ -48,9 +52,9 @@
                                 <label class="ui-checkbox col-md-5" data-ng-controller="CollapseDemoCtrl" style="padding-left: 0px !important;" ng-repeat="rf in otherRisks">
                                     <input name="selectedRisks[]" type="checkbox" value={{rf.name}} ng-model="rf.selected" ng-click="isCollapsed = !isCollapsed"><span ng-bind="rf.name"></span>
                                     <ul class="collapse" collapse="!isCollapsed">
-                                        <li class="list-group-item">
-                                            <label class="ui-checkbox"><span class="b"> Current</span> <input type="text" placeholder=" units" class="input-collapse"></label>
-                                            <label class="ui-checkbox"><span class="b"> Limit</span> <input type="text" placeholder=" units" class="input-collapse"></label>
+                                        <li class="metricInput list-group-item-success">
+                                            <label class="ui-checkbox" style="margin: 10px 20px 10px 20px;"><span class="b"> Current : </span> <input type="text" placeholder=" units" class="input-collapse"></label>
+                                            <label class="ui-checkbox" style="margin: 10px 20px 10px 20px;"><span class="b"> Limit : </span> <input type="text" placeholder=" units" class="input-collapse"></label>
                                         </li>
                                     </ul>
                                 </label>

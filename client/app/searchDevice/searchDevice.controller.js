@@ -20,7 +20,7 @@
                 {name : "Diabetes", selected : "false"}];
 
             //selection list
-            $scope.diseaseSelection = [];
+            //$scope.diseaseSelection = [];
             $scope.riskSelection = [];
             $scope.featureSelection = [];
 
@@ -83,11 +83,15 @@
                 });
             }, true);
 
-            $scope.isValidateStep1 = function() {
+            $scope.isValidateStep1 = function(val) {
+                $scope.diseaseSelection = val;
 
                 if($scope.diseaseSelection.length == 0){
-                    //making default selection to be HF
+                    //making default selection to be HF for multiselect
                     $scope.diseaseSelection = ["Heart Failure"];
+                    //making default selection to be HF for single select
+                    $scope.diseaseSelection = "Heart Failure";
+
                 }
 
                 //pull from database risk factors for each disease using a service call or find an optimization
@@ -95,21 +99,25 @@
                     rf = ["Weight", "BMI", "Pulse", "Blood Pressure", "Oxygen Saturation", "Activity"];
                     $scope.riskFactors = convertArrToJson(rf);
                     $scope.otherRisks = convertArrToJson(_.difference(rfAll,rf));
+
                 }
                 if($scope.diseaseSelection.indexOf("COPD") != -1){
                     rf = ["Forced Expiratory Volume", "Peak Expiratory Flow", "Ventilation-Perfusion Ratio","Oxygen Saturation","Tobacco Cessation","Exercise/Activity"];
                     $scope.riskFactors = convertArrToJson(rf);
                     $scope.otherRisks = convertArrToJson(_.difference(rfAll,rf));
+
                 }
                 if($scope.diseaseSelection.indexOf("Atrial Fibrillation") != -1){
                     rf = ["Heart Rate","Heart Rhythm"];
                     $scope.riskFactors = convertArrToJson(rf);
                     $scope.otherRisks = convertArrToJson(_.difference(rfAll,rf));
+
                 }
                 if($scope.diseaseSelection.indexOf("Diabetes") != -1){
                     rf = ["Blood Glucose","Weight","Activity/Exercise","HbA1c"];
                     $scope.riskFactors = convertArrToJson(rf);
                     $scope.otherRisks = convertArrToJson(_.difference(rfAll,rf));
+
                 }
             };
 
