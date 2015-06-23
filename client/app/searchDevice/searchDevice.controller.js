@@ -10,7 +10,7 @@
             $scope.unusualList = [];
             $scope.wizard = {
                 symptom: '',
-                inpError : false,
+                inpError : false
             };
 
             //hardcoding diseases
