@@ -4,7 +4,7 @@
 (function () {
     'use strict';
     angular.module('app.ui.form').controller('searchDeviceCtrl', [
-        '$scope', '$location', '$rootScope', '$route', '$document','filterFilter','logger', function($scope, $location, $rootScope, $route, $document,filterFilter,logger) {
+        '$scope', '$location', '$rootScope', '$route', '$document','filterFilter','logger','WizardHandler', function($scope, $location, $rootScope, $route, $document,filterFilter,logger,WizardHandler) {
 
             //scope variable initialization
             $scope.unusualList = [];
@@ -12,6 +12,7 @@
                 symptom: '',
                 inpError : false
             };
+
 
             //hardcoding diseases
             $scope.diseaseList = [{name : "Heart Failure", selected : "false"},
@@ -36,6 +37,8 @@
                 return newarr;
             };
 
+            //hardcoding patient characteristics
+            $scope.patientChar = ["visual impairment", "hearing impairment", "fine motor dexterity", "cognitive impairment", "caregiver", "neuropathy"];
             // hardcoding risk factors
             var rf = ["Weight", "BMI", "Pulse", "Blood Pressure", "Oxygen Saturation", "Activity"];
             $scope.riskFactors = convertArrToJson(rf);
@@ -88,7 +91,7 @@
 
                 if($scope.diseaseSelection.length == 0){
                     //making default selection to be HF for multiselect
-                    $scope.diseaseSelection = ["Heart Failure"];
+                    //$scope.diseaseSelection = ["Heart Failure"];
                     //making default selection to be HF for single select
                     $scope.diseaseSelection = "Heart Failure";
 
