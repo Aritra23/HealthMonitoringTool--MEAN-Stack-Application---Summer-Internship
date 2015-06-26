@@ -5,3 +5,4 @@ client/bower_components/**
 .sass-cache/**
 .tmp/**
 .editorconfig
+CHANGELOG.md
