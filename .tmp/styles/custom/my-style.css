@@ -1,32 +1,15 @@
 @media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/custom\/my-style\.scss}line{font-family:\000031}}
 .nextStyle {
-  float: right;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/custom\/my-style\.scss}line{font-family:\000034}}
-.prevStyle {
   float: left;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/custom\/my-style\.scss}line{font-family:\000037}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/custom\/my-style\.scss}line{font-family:\000034}}
 .logoImage {
   height: 100%;
   width: auto;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/custom\/my-style\.scss}line{font-family:\0000311}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/custom\/my-style\.scss}line{font-family:\000038}}
 .input-collapse {
   width: 70px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/custom\/my-style\.scss}line{font-family:\0000314}}
-.metricInput {
-  vertical-align: middle;
-  list-style: none;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/custom\/my-style\.scss}line{font-family:\0000318}}
-.horizontal-center {
-  margin: auto;
-  width: 70%;
 }

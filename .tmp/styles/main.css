@@ -1,6 +1,6 @@
 @charset "UTF-8";
-/*$body-bg:               #ffffff !default;*/
-/*$body-bg:               #ffffff !default;*/
+/*$body-bg:               #f3f3f3 !default;*/
+/*$body-bg:               #f3f3f3 !default;*/
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 @media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/bootstrap\/bootstrap\/_normalize\.scss}line{font-family:\000039}}
 html {
@@ -1416,7 +1416,7 @@ body {
   font-size: 14px;
   line-height: 1.42857;
   color: #767676;
-  background-color: #f3f3f3;
+  background-color: #ffffff;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/bootstrap\/bootstrap\/_scaffolding\.scss}line{font-family:\0000336}}
@@ -1472,7 +1472,7 @@ img {
 .img-thumbnail {
   padding: 4px;
   line-height: 1.42857;
-  background-color: #f3f3f3;
+  background-color: #ffffff;
   border: 1px solid #ddd;
   border-radius: 2px;
   -webkit-transition: all 0.2s ease-in-out;
@@ -3462,7 +3462,7 @@ th {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/bootstrap\/bootstrap\/_tables\.scss}line{font-family:\0000362}}
 .table .table {
-  background-color: #f3f3f3;
+  background-color: #ffffff;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/bootstrap\/bootstrap\/_tables\.scss}line{font-family:\0000375}}
@@ -5309,7 +5309,7 @@ tbody.collapse.in {
 @media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/bootstrap\/bootstrap\/_navs\.scss}line{font-family:\0000396}}
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
   color: #555555;
-  background-color: #f3f3f3;
+  background-color: #ffffff;
   border: 1px solid #ddd;
   border-bottom-color: transparent;
   cursor: default;
@@ -5402,7 +5402,7 @@ tbody.collapse.in {
   .nav-tabs.nav-justified > .active > a:hover,
   .nav-tabs-justified > .active > a:focus,
   .nav-tabs.nav-justified > .active > a:focus {
-    border-bottom-color: #f3f3f3;
+    border-bottom-color: #ffffff;
   }
 }
 
@@ -6428,7 +6428,7 @@ a.badge:hover, a.badge:focus {
   padding: 4px;
   margin-bottom: 20px;
   line-height: 1.42857;
-  background-color: #f3f3f3;
+  background-color: #ffffff;
   border: 1px solid #ddd;
   border-radius: 2px;
   -webkit-transition: border 0.2s ease-in-out;
@@ -10686,20 +10686,16 @@ img.img80_80 {
   margin-top: 10px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\000032}}
-.panel {
-  box-shadow: 30px 30px 30px rgba(0, 0, 0, 0.1);
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\000035}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\000033}}
 .panel .panel-heading {
   text-transform: uppercase;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\000039}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\000037}}
 .panel .panel-title {
   font-size: 14px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\0000316}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\0000314}}
 .panel-box {
   display: table;
   table-layout: fixed;
@@ -10708,7 +10704,7 @@ img.img80_80 {
   text-align: center;
   border: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\0000324}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\0000322}}
 .panel-box .panel-item {
   display: table-cell;
   padding: 30px;
@@ -10716,7 +10712,7 @@ img.img80_80 {
   vertical-align: top;
   border-radius: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\0000331}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\0000329}}
 .panel-box .panel-left {
   -moz-border-radius-topleft: 2px;
   -webkit-border-top-left-radius: 2px;
@@ -10725,7 +10721,7 @@ img.img80_80 {
   -webkit-border-bottom-left-radius: 2px;
   border-bottom-left-radius: 2px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\0000334}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\0000332}}
 .panel-box .panel-right {
   -moz-border-radius-topright: 2px;
   -webkit-border-top-right-radius: 2px;
@@ -10734,16 +10730,16 @@ img.img80_80 {
   -webkit-border-bottom-right-radius: 2px;
   border-bottom-right-radius: 2px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\0000339}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\0000337}}
 .panel-box.info-box i {
   line-height: 70px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\0000344}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\0000342}}
 .panel-box .panel-top,
 .panel-box .panel-bottom {
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\0000348}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\0000346}}
 .panel-box .panel-top {
   padding: 30px 20px;
   -moz-border-radius-topleft: 2px;
@@ -10753,7 +10749,7 @@ img.img80_80 {
   -webkit-border-top-right-radius: 2px;
   border-top-right-radius: 2px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\0000352}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\0000350}}
 .panel-box .panel-bottom {
   padding: 10px;
   -moz-border-radius-bottomleft: 2px;
@@ -10763,22 +10759,22 @@ img.img80_80 {
   -webkit-border-bottom-right-radius: 2px;
   border-bottom-right-radius: 2px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\0000356}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\0000354}}
 .panel-box .panel-bottom p {
   margin: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\0000361}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\0000359}}
 .panel-box .list-justified-container {
   padding: 15px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\0000365}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\0000363}}
 .panel-box ul.list-justified {
   display: table;
   width: 100%;
   list-style: none;
   padding: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\0000371}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\0000369}}
 .panel-box ul.list-justified > li {
   float: none;
   display: table-cell;
@@ -10786,15 +10782,15 @@ img.img80_80 {
   width: 1%;
   border-right: 1px solid #eeeeee;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\0000377}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\0000375}}
 .panel-box ul.list-justified > li:last-child {
   border: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\0000381}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\0000379}}
 .panel-box ul.list-justified > li p {
   margin: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\0000387}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\0000385}}
 .panel-box .panel-icon {
   display: block;
   margin: -75px auto 0;
@@ -10809,12 +10805,12 @@ img.img80_80 {
   text-shadow: -6px 8px 5px rgba(0, 0, 0, 0.3);
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003104}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003102}}
 .mini-box {
   min-height: 105px;
   padding: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003107}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003105}}
 .mini-box .box-icon {
   display: block;
   float: left;
@@ -10827,16 +10823,16 @@ img.img80_80 {
   text-align: center;
   font-size: 35px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003121}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003119}}
 .mini-box .box-info p {
   margin: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003128}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003126}}
 .panel-profile {
   border: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003131}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003129}}
 .panel-profile .profile {
   margin: 5px 15px 5px 5px;
   border-radius: 50%;
@@ -10844,29 +10840,29 @@ img.img80_80 {
   -webkit-box-shadow: 0 0 0 5px #2b9adf, 0 0 10px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 0 5px #2b9adf, 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003136}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003134}}
 .panel-profile .profile img {
   border-radius: 50%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003141}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003139}}
 .panel-profile .list-group > li > i {
   margin-right: 10px;
   font-size: 16px;
   color: #777777;
   table-layout: fixed;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003148}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003146}}
 .panel-profile .list-justified-container {
   padding: 15px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003152}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003150}}
 .panel-profile ul.list-justified {
   display: table;
   width: 100%;
   list-style: none;
   padding: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003158}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003156}}
 .panel-profile ul.list-justified > li {
   float: none;
   display: table-cell;
@@ -10874,11 +10870,11 @@ img.img80_80 {
   width: 1%;
   border-right: 1px solid #eeeeee;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003164}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003162}}
 .panel-profile ul.list-justified > li:last-child {
   border: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003168}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003166}}
 .panel-profile ul.list-justified > li p {
   margin: 0;
 }
@@ -12390,7 +12386,7 @@ button.toast-close-button {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/pages\/_err\.scss}line{font-family:\000037}}
 .page-err .err-status {
-  background-color: #f3f3f3;
+  background-color: #ffffff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/pages\/_err\.scss}line{font-family:\000039}}
 .page-err .err-status h1 {
@@ -12574,7 +12570,7 @@ button.toast-close-button {
 .page-tasks .nav-tabs > li.active > a,
 .page-tasks .nav-tabs > li.active > a:hover,
 .page-tasks .nav-tabs > li.active > a:focus {
-  background-color: #f3f3f3;
+  background-color: #ffffff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/pages\/_tasks\.scss}line{font-family:\0000363}}
 .page-tasks .task-list .view {
@@ -12699,7 +12695,7 @@ button.toast-close-button {
 .page-signin .signup-body,
 .page-signup .signin-body,
 .page-signup .signup-body {
-  border-top: 1px solid #f8f8f8;
+  border-top: 1px solid white;
   padding: 20px 10px;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/pages\/_signin_signup\.scss}line{font-family:\0000327}}
@@ -12726,7 +12722,7 @@ button.toast-close-button {
 .page-signup .line-thru:before {
   width: 50px;
   height: 10px;
-  background-color: #f3f3f3;
+  background-color: #ffffff;
   content: '';
   margin: -5px 0 0 -20px;
   left: 50%;
@@ -12738,7 +12734,7 @@ button.toast-close-button {
 .page-signin .line-thru:after,
 .page-signup .line-thru:after {
   width: 100%;
-  border-bottom: 1px solid #d9d9d9;
+  border-bottom: 1px solid #e6e6e6;
   content: '';
   display: block;
   position: absolute;
@@ -13476,33 +13472,16 @@ button.toast-close-button {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/custom\/my-style\.scss}line{font-family:\000031}}
 .nextStyle {
-  float: right;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/custom\/my-style\.scss}line{font-family:\000034}}
-.prevStyle {
   float: left;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/custom\/my-style\.scss}line{font-family:\000037}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/custom\/my-style\.scss}line{font-family:\000034}}
 .logoImage {
   height: 100%;
   width: auto;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/custom\/my-style\.scss}line{font-family:\0000311}}
+@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/custom\/my-style\.scss}line{font-family:\000038}}
 .input-collapse {
   width: 70px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/custom\/my-style\.scss}line{font-family:\0000314}}
-.metricInput {
-  vertical-align: middle;
-  list-style: none;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/E\:\/ASU\/Project\/Project\%203\/Project-HoneyBee\/client\/styles\/custom\/my-style\.scss}line{font-family:\0000318}}
-.horizontal-center {
-  margin: auto;
-  width: 70%;
 }
