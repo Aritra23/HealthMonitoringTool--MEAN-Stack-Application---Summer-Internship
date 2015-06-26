@@ -39,11 +39,12 @@
 
             //hardcoding patient characteristics
             $scope.patientChar = ["visual impairment", "hearing impairment", "fine motor dexterity", "cognitive impairment", "caregiver", "neuropathy"];
+
             // hardcoding risk factors
-            var rf = ["Weight", "BMI", "Pulse", "Blood Pressure", "Oxygen Saturation", "Activity"];
+            var rf = ["Weight", "BMI", "Resting Heart Rate", "Blood Pressure", "Oxygen Saturation", "Activity"];
             $scope.riskFactors = convertArrToJson(rf);
 
-            var rfAll = ["Weight", "BMI", "Pulse", "Blood Pressure", "Oxygen Saturation", "Exercise/Activity", "Forced Expiratory Volume", "Peak Expiratory Flow", "Ventilation-Perfusion Ratio","Tobacco Cessation", "Heart Rate","Heart Rhythm", "Blood Glucose","HbA1c"];
+            var rfAll = ["Weight", "BMI", "Resting Heart Rate", "Blood Pressure", "Oxygen Saturation", "Exercise/Activity", "Forced Expiratory Volume", "Peak Expiratory Flow", "Ventilation-Perfusion Ratio","Tobacco Cessation", "Heart Rate","Heart Rhythm", "Blood Glucose","HbA1c"];
 
 
             // hardcoding device features
@@ -51,7 +52,7 @@
             $scope.deviceFeatures = convertArrToJson(df);
 
             //hardcoding device categories
-            $scope.deviceCategory = ["Body Composition Analyzer","Blood Pressure Monitor","Activity Tracker","Heart Rate Monitor","Pulse Oxymeter"];
+            $scope.deviceCategory = ["Body Composition Analyzer","Blood Pressure Monitor","Activity Tracker","Heart Rate Monitor","Resting Heart Rate Oximeter"];
 
             //filter selection
             $scope.selectedDiseases = function selectedDiseases() {
@@ -99,7 +100,7 @@
 
                 //pull from database risk factors for each disease using a service call or find an optimization
                 if($scope.diseaseSelection.indexOf("Heart Failure") != -1){
-                    rf = ["Weight", "BMI", "Pulse", "Blood Pressure", "Oxygen Saturation", "Activity"];
+                    rf = ["Weight", "BMI", "Resting Heart Rate", "Blood Pressure", "Oxygen Saturation", "Activity"];
                     $scope.riskFactors = convertArrToJson(rf);
                     $scope.otherRisks = convertArrToJson(_.difference(rfAll,rf));
 
