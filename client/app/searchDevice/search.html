@@ -41,8 +41,8 @@
                         <div class="row">
                             <div class="col-md-6 col-lg-6" ng-repeat="d in diseaseList">
                                 <section class="panel panel-box info-box" wz-next ng-click="isValidateStep1(d.name)">
-                                    <div class="panel-left panel-item bg-danger">
-                                        <i class="fa text-large stat-icon fa-heartbeat"></i>
+                                    <div class="panel-left panel-item">
+                                        <img src="../images/honeybee-logoOnly-TM.jpg" style="max-height: 50%;max-width: 50%;">
                                     </div>
                                     <div class="panel-right panel-item bg-reverse" style="vertical-align: middle">
                                         <!--<p class="size-h3 no-margin"><input name="selectedDiseases[]" type="checkbox" value={{d.name}} ng-model="d.selected"> <span ng-bind="d.name"></span></p>-->
@@ -69,6 +69,16 @@
                                        <li class="metricInput list-group-item-success">
                                         <label class="ui-checkbox" style="margin: 10px 20px 10px 20px;"><span class="b"> Current : </span> <input type="text" class="input-collapse" placeholder=" units"></label>
                                         <label class="ui-checkbox" style="margin: 10px 20px 10px 20px;"><span class="b"> Limit : </span> <input type="text" class="input-collapse" placeholder=" units"></label>
+                                        <label class="ui-checkbox" style="margin: 10px 20px 10px 20px;">
+                                           <div class="open" dropdown="" is-open="status.isopen1">
+                                               <button type="button"  class="btn btn-default dropdown-toggle" dropdown-toggle="" ng-disabled="disabled"> Frequency <span class="caret"></span> </button>
+                                               <ul class="dropdown-menu" role="menu">
+                                                   <li><a href="javascript:;">Hourly</a></li>
+                                                   <li><a href="javascript:;">Daily</a></li>
+                                                   <li><a href="javascript:;">Limit Reached</a></li>
+                                               </ul>
+                                           </div>
+                                        </label>
                                        </li>
                                 </ul>
                             </label>
@@ -82,6 +92,17 @@
                                         <li class="metricInput list-group-item-success">
                                             <label class="ui-checkbox" style="margin: 10px 20px 10px 20px;"><span class="b"> Current : </span> <input type="text" placeholder=" units" class="input-collapse"></label>
                                             <label class="ui-checkbox" style="margin: 10px 20px 10px 20px;"><span class="b"> Limit : </span> <input type="text" placeholder=" units" class="input-collapse"></label>
+                                            <label class="ui-checkbox" style="margin: 10px 20px 10px 20px;">
+                                                <div class="open" dropdown="" is-open="status.isopen1">
+                                                    <button type="button"  class="btn btn-default dropdown-toggle" dropdown-toggle="" ng-disabled="disabled"> Frequency <span class="caret"></span> </button>
+                                                    <ul class="dropdown-menu" role="menu">
+                                                        <li><a href="javascript:;">Hourly</a></li>
+                                                        <li><a href="javascript:;">Daily</a></li>
+                                                        <li><a href="javascript:;">Weekly</a></li>
+                                                        <li><a href="javascript:;">Limit Reached</a></li>
+                                                    </ul>
+                                                </div>
+                                            </label>
                                         </li>
                                     </ul>
                                 </label>
@@ -112,8 +133,16 @@
                     <form name="wizard_step3">
                         <!--Iterating selected risks-->
                         <div class="form-group input-group">
-                            <ul class="ui-checkbox col-md-12" style="padding-left: 0px !important;" ng-if="riskSelection.length>0" ng-repeat="dc in deviceCategory">
+                            <ul class="ui-checkbox col-md-10" style="padding-left: 0px !important;" ng-if="riskSelection.length>0" ng-repeat="dc in deviceCategory">
                                 <li class="list-group-item" wz-next><span ng-bind="dc"></span> <button type="button" class="btn btn-info badge badge-info">View Devices</button></li>
+                                        <section class="panel panel-box info-box" wz-next>
+                                            <div class="panel-left panel-item">
+                                                <img src="../images/honeybee-logoOnly-TM.jpg" style="max-height: 50%;max-width: 50%;">
+                                            </div>
+                                            <div class="panel-right panel-item bg-reverse" style="vertical-align: middle">
+                                                <p class="size-h3 no-margin"><label><span ng-bind="dc"></span></label></p>
+                                            </div>
+                                        </section>
                             </ul>
                             <div ng-if="riskSelection.length == 0" class="callout callout-danger">
                                 <h4>No recommendations available</h4>
@@ -126,10 +155,21 @@
                     <buttton type="submit" class="btn btn-primary nextStyle" wz-finish>Finish</buttton>
                 </wz-step>
                 <wz-step title="Device List">
-                    <h2 class="size-h2">Devices        <button type = "button" class = "btn-btn-default dropdown-toggle" dropdown-toggle aria-expanded = "true">Sort By<span class="caret"></span><ul class="dropdown-menu" role="menu">
-                        <li><a href="javascript:;">Cost</a> </li>
-                        <li><a href="javascript:;">Features</a> </li>
-                        <li><a href="javascript:;">Alert Modes</a></li></ul></button></h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2 class="size-h2">Devices</h2>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="open" style="margin-top: 20px;" dropdown="" is-open="status.isopen1">
+                                <button type="button"  class="btn btn-default dropdown-toggle" dropdown-toggle="" ng-disabled="disabled"> Sort By <span class="caret"></span> </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="javascript:;">Relevance</a></li>
+                                    <li><a href="javascript:;">Price</a></li>
+                                    <li><a href="javascript:;">Reviews</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                     <div class="divider divider-lg"></div>
                     <form name="wizard_step4">
                     <div class="row">
@@ -140,11 +180,19 @@
                                     <div class="pricing-price">
                                         <strong>Withings Smart Scale</strong>
                                     </div>
-                                    <ul>
-                                        <li><input type="checkbox"><strong> Cost : </strong> $149.99 </li>
-                                        <li><input type="checkbox"><strong> Air quality Screening : </strong> Yes </li>
-                                        <li><input type="checkbox"><strong> Daily Report : </strong> Yes </li>
-                                        <li><input type="checkbox"><strong> Body Fat : </strong> Yes </li>
+                                    <ul data-ng-controller="CollapseDemoCtrl" style="text-align: left">
+                                        <li><strong> Cost : </strong> $149.99 </li>
+                                        <li ng-click="isCollapsed = !isCollapsed"><strong> Technical Specification</strong></li>
+                                        <div class="row-fluid" collapse="!isCollapsed">
+                                            <ul style="list-style: none">
+                                            <li><strong> Air quality Screening : </strong> Yes </li>
+                                            <li><strong> Daily Report : </strong> Yes </li>
+                                            <li><strong> Body Fat : </strong> Yes </li>
+                                            </ul>
+                                        </div>
+                                        <li popover-placement="right" popover-title="Options" popover-append-to-body="true" popover="SMS,Email"><strong>Modalities</strong></li>
+                                        <!--forcing background-color since it does not render as expected-->
+                                        <li popover-placement="right" popover-title="Requires" popover-append-to-body="true" popover="Smartphone" style="background-color: #f9f9f9;"><strong>Usability</strong></li>
                                     </ul>
                                 </div>
                                 <footer>
@@ -159,11 +207,18 @@
                                     <div class="pricing-price">
                                         <strong>Withings Smart Scale</strong>
                                     </div>
-                                    <ul>
-                                        <li><input type="checkbox"><strong> Cost : </strong> $149.99 </li>
-                                        <li><input type="checkbox"><strong> Air quality Screening : </strong> Yes </li>
-                                        <li><input type="checkbox"><strong> Daily Report : </strong> Yes </li>
-                                        <li><input type="checkbox"><strong> Body Fat : </strong> Yes </li>
+                                    <ul data-ng-controller="CollapseDemoCtrl" style="text-align: left">
+                                        <li><strong> Cost : </strong> $149.99 </li>
+                                        <li ng-click="isCollapsed = !isCollapsed"><strong> Technical Specification </strong></li>
+                                        <div class="row-fluid" collapse="!isCollapsed">
+                                            <ul style="list-style: none">
+                                                <li><strong> Air quality Screening : </strong> Yes </li>
+                                                <li><strong> Daily Report : </strong> Yes </li>
+                                                <li><strong> Body Fat : </strong> Yes </li>
+                                            </ul>
+                                        </div>
+                                        <li popover-placement="right" popover-title="Options" popover-append-to-body="true" popover="Web Profile,SMS,Email"><strong>Modalities</strong></li>
+                                        <li popover-placement="right" popover-title="Requires" popover-append-to-body="true" popover="Smartphone" style="background-color: #f9f9f9;"><strong>Usability</strong></li>
                                     </ul>
                                 </div>
                                 <footer>

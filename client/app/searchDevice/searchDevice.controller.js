@@ -38,7 +38,7 @@
             };
 
             //hardcoding patient characteristics
-            $scope.patientChar = ["visual impairment", "hearing impairment", "fine motor dexterity", "cognitive impairment", "caregiver", "neuropathy"];
+            $scope.patientChar = ["Visual Impairment", "Hearing Impairment", "Fine Motor Dexterity", "Cognitive Impairment", "Caregiver", "Peripheral Neuropathy"];
 
             // hardcoding risk factors
             var rf = ["Weight", "BMI", "Resting Heart Rate", "Blood Pressure", "Oxygen Saturation", "Activity"];
@@ -128,6 +128,7 @@
             // function to validate risk factor selection
             $scope.isValidateStep2 = function(){
                 // $scope.riskSelection contains the selected risk factors
+                console.log($scope.riskSelection);
 
             };
 
