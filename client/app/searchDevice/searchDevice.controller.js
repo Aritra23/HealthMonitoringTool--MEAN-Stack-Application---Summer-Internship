@@ -128,8 +128,6 @@
             // function to validate risk factor selection
             $scope.isValidateStep2 = function(){
                 // $scope.riskSelection contains the selected risk factors
-                console.log($scope.riskSelection);
-
             };
 
             $scope.addUnusualSymptom = function(){
