@@ -133,16 +133,16 @@
                     <form name="wizard_step3">
                         <!--Iterating selected risks-->
                         <div class="form-group input-group">
-                            <ul class="ui-checkbox col-md-10" style="padding-left: 0px !important;" ng-if="riskSelection.length>0" ng-repeat="dc in deviceCategory">
-                                <li class="list-group-item" wz-next><span ng-bind="dc"></span> <button type="button" class="btn btn-info badge badge-info">View Devices</button></li>
-                                        <section class="panel panel-box info-box" wz-next>
+                            <ul class="ui-checkbox col-md-12" style="padding-left: 0px !important;" ng-if="riskSelection.length>0" ng-repeat="dc in deviceCategory">
+                                <li class="list-group-item" wz-next><span class="size-h4" ng-bind="dc"></span> <button type="button" class="btn btn-info badge badge-info">View Devices</button></li>
+                                        <!--<section class="panel panel-box info-box" wz-next>
                                             <div class="panel-left panel-item">
                                                 <img src="../images/honeybee-logoOnly-TM.jpg" style="max-height: 50%;max-width: 50%;">
                                             </div>
                                             <div class="panel-right panel-item bg-reverse" style="vertical-align: middle">
                                                 <p class="size-h3 no-margin"><label><span ng-bind="dc"></span></label></p>
                                             </div>
-                                        </section>
+                                        </section>-->
                             </ul>
                             <div ng-if="riskSelection.length == 0" class="callout callout-danger">
                                 <h4>No recommendations available</h4>
