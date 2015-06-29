@@ -42,7 +42,7 @@
                             <div class="col-md-6 col-lg-6" ng-repeat="d in diseaseList">
                                 <section class="panel panel-box info-box" wz-next ng-click="isValidateStep1(d.name)">
                                     <div class="panel-left panel-item">
-                                        <img src="../images/honeybee-logoOnly-TM.jpg" style="max-height: 50%;max-width: 50%;">
+                                        <img src={{d.imgsrc}} style="max-height: 50%;max-width: 50%;">
                                     </div>
                                     <div class="panel-right panel-item bg-reverse" style="vertical-align: middle">
                                         <!--<p class="size-h3 no-margin"><input name="selectedDiseases[]" type="checkbox" value={{d.name}} ng-model="d.selected"> <span ng-bind="d.name"></span></p>-->
