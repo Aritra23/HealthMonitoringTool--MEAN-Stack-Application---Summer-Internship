@@ -12,18 +12,18 @@
                 symptom: '',
                 inpError : false
             };
+            String.prototype.replaceAll = function(s,r){return this.split(s).join(r).trim()};
 
 
             //hardcoding diseases
-            $scope.diseaseList = [{name : "Heart Failure", selected : "false", imgsrc : ""},
+             $scope.diseaseList = [{name : "Heart Failure", selected : "false", imgsrc : ""},
                 {name : "COPD", selected : "false", imgsrc : ""},
                 {name : "Atrial Fibrillation", selected : "false", imgsrc : ""},
                 {name : "Diabetes", selected : "false", imgsrc : ""}];
 
-            //initialize imgsrc
-            //console error since scope value is already set
+            //assign value to imgsrc
             for(var item in $scope.diseaseList){
-                $scope.diseaseList[item].imgsrc = "../images/disease-images/"+$scope.diseaseList[item].name.replace(" ","").trim()+".png";
+                $scope.diseaseList[item].imgsrc = "../images/disease-images/"+$scope.diseaseList[item].name.replaceAll(" ","")+".png";
             }
 
             //selection list
@@ -58,7 +58,16 @@
             $scope.deviceFeatures = convertArrToJson(df);
 
             //hardcoding device categories
-            $scope.deviceCategory = ["Body Composition Analyzer","Blood Pressure Monitor","Activity Tracker","Heart Rate Monitor","Resting Heart Rate Oximeter"];
+            $scope.deviceCategory = [{name:"Body Composition Analyzer",imgsrc:""},
+                {name:"Blood Pressure Monitor",imgsrc:""},
+                {name:"Activity Tracker",imgsrc:""},
+                {name:"Heart Rate Monitor",imgsrc:""},
+                {name:"Resting Heart Rate Oximeter",imgsrc:""}];
+
+            //assigning image source to device category
+            for(var item in $scope.deviceCategory){
+                $scope.deviceCategory[item].imgsrc = "../images/device-category/"+$scope.deviceCategory[item].name.replaceAll(" ","")+".png";
+            }
 
             //filter selection
             $scope.selectedDiseases = function selectedDiseases() {
@@ -126,6 +135,11 @@
             // function to validate risk factor selection
             $scope.isValidateStep2 = function(){
                 // $scope.riskSelection contains the selected risk factors
+            };
+
+            // function to validate device category
+            $scope.isValidateStep3 = function(devCat){
+                $scope.devCat = devCat;
             };
 
             $scope.addUnusualSymptom = function(){
