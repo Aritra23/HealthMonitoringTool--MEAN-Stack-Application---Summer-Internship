@@ -1,32 +1,30 @@
 /**
- * Created by Dilip on 6/15/2015.
+ * Main application file
  */
+
 'use strict';
 
 // Set default node environment to development
+//process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
+var http = require('http');
+var fs         = require("fs");
+
 var express = require('express');
-//var config = require('./config/environment');
+var config = require('./config/environment');
 
 // Setup server
 var app = express();
-var server = require('http').createServer(app);
-//require('./config/express')(app);
+var server = http.createServer(app);
+require('./config/express')(app);
 require('./routes')(app);
 
-/*
- // Start server
- server.listen(config.port, config.ip, function () {
- console.log('Express server listening on %d, in %s mode', config.port, app.get('env'));
- });
- */
 
-// Start http server
-server.listen(3443, "localhost", function () {
-    console.log('Express server listening on 3443, in %s mode', app.get('env'));
+// Start https server
+server.listen(9000, config.ip, function () {
+  console.log('Express server listening on 9000, in %s mode', app.get('env'));
 });
 
-
 // Expose app
-module.exports = app;
+var exports = module.exports = app;
