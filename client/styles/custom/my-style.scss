@@ -43,40 +43,40 @@
     height: 1px;
 }
 .steps-indicator.steps-2:before {
-    left: calc(100% / 2 / 2);
-    right: calc(100% / 2 / 2);
+    left: (100% / 2 / 2);
+    right: (100% / 2 / 2);
 }
 .steps-indicator.steps-3:before {
-    left: calc(100% / 3 / 2);
-    right: calc(100% / 3 / 2);
+    left: (100% / 3 / 2);
+    right: (100% / 3 / 2);
 }
 .steps-indicator.steps-4:before {
-    left: calc(100% / 4 / 2);
-    right: calc(100% / 4 / 2);
+    left: (100% / 4 / 2);
+    right: (100% / 4 / 2);
 }
 .steps-indicator.steps-5:before {
-    left: calc(100% / 5 / 2);
-    right: calc(100% / 5 / 2);
+    left: (100% / 5 / 2);
+    right: (100% / 5 / 2);
 }
 .steps-indicator.steps-6:before {
-    left: calc(100% / 6 / 2);
-    right: calc(100% / 6 / 2);
+    left: (100% / 6 / 2);
+    right: (100% / 6 / 2);
 }
 .steps-indicator.steps-7:before {
-    left: calc(100% / 7 / 2);
-    right: calc(100% / 7 / 2);
+    left: (100% / 7 / 2);
+    right: (100% / 7 / 2);
 }
 .steps-indicator.steps-8:before {
-    left: calc(100% / 8 / 2);
-    right: calc(100% / 8 / 2);
+    left: (100% / 8 / 2);
+    right: (100% / 8 / 2);
 }
 .steps-indicator.steps-9:before {
-    left: calc(100% / 9 / 2);
-    right: calc(100% / 9 / 2);
+    left: (100% / 9 / 2);
+    right: (100% / 9 / 2);
 }
 .steps-indicator.steps-10:before {
-    left: calc(100% / 10 / 2);
-    right: calc(100% / 10 / 2);
+    left: (100% / 10 / 2);
+    right: (100% / 10 / 2);
 }
 .steps-indicator * {
     -webkit-box-sizing: border-box;
@@ -115,34 +115,34 @@
     color: #4d4d4d;
 }
 .steps-indicator.steps-2 li {
-    width: calc(100% / 2);
+    width: (100% / 2);
 }
 .steps-indicator.steps-3 li {
-    width: calc(100% / 3);
+    width: (100% / 3);
 }
 .steps-indicator.steps-4 li {
-    width: calc(100% / 4);
+    width: (100% / 4);
 }
 .steps-indicator.steps-5 li {
-    width: calc(100% / 5);
+    width: (100% / 5);
 }
 .steps-indicator.steps-6 li {
-    width: calc(100% / 6);
+    width: (100% / 6);
 }
 .steps-indicator.steps-7 li {
-    width: calc(100% / 7);
+    width: (100% / 7);
 }
 .steps-indicator.steps-8 li {
-    width: calc(100% / 8);
+    width: (100% / 8);
 }
 .steps-indicator.steps-9 li {
-    width: calc(100% / 9);
+    width: (100% / 9);
 }
 .steps-indicator.steps-10 li {
-    width: calc(100% / 10);
+    width: (100% / 10);
 }
 .steps-indicator.steps-11 li {
-    width: calc(100% / 11);
+    width: (100% / 11);
 }
 .steps-indicator li.default {
     pointer-events: none;

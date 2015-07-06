@@ -138,7 +138,7 @@
                                 <strong>Additional Info : </strong>
                                 <p>Please ensure to make a selection in the previous step if not selected any metrics. There may be no available devices for current selection.</p>
                             </div>
-                            <div class="col-md-6 col-lg-6" ng-repeat="dc in deviceCategory">
+                            <div class="col-md-6 col-lg-6" ng-if="riskSelection.length > 0" ng-repeat="dc in deviceCategory">
                                 <!--<li class="list-group-item" wz-next><span class="size-h4" ng-bind="dc"></span> <button type="button" class="btn btn-info badge badge-info">View Devices</button></li>-->
                                         <section class="panel panel-box info-box" wz-next="isValidateStep3(dc.name)">
                                             <div class="panel-left panel-item" style="padding: 0;">
@@ -228,7 +228,7 @@
                         </div>
                     </div>
                     </form>
-                    <buttton class="btn btn-primary prevStyle" wz-previous>Back</buttton>
+                    <buttton class="btn btn-primary prevStyle" wz-previous>Previous</buttton>
                 </wz-step>
             </wizard>
         </div>
