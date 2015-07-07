@@ -62,7 +62,7 @@
                 {name:"Blood Pressure Monitor",imgsrc:""},
                 {name:"Activity Tracker",imgsrc:""},
                 {name:"Heart Rate Monitor",imgsrc:""},
-                {name:"Resting Heart Rate Oximeter",imgsrc:""}];
+                {name:"Oximeter",imgsrc:""}];
 
             //assigning image source to device category
             for(var item in $scope.deviceCategory){

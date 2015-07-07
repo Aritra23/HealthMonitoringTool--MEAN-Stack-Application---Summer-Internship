@@ -1,9 +1,8 @@
 <div class="page">
     <section class="panel panel-default">
         <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> SEARCH DEVICE</strong></div>
-        <div class="panel-body" data-ng-controller="searchDeviceCtrl">
+        <div class="panel-body hb-background" data-ng-controller="searchDeviceCtrl">
             <wizard on-finish="notify('success')" class="wizard-steps-container" hide-indicators="false" template="app/searchDevice/wizard.html">
-                <!--<span class="header-nav">{{ currentStepNumber }} of {{steps}}</span>-->
                 <wz-step title="Patient Characteristics">
                     <h2 class="size-h2 form-header">Select Patient Characteristics</h2>
                     <div class="divider divider-lg"></div>
@@ -75,6 +74,7 @@
                                                <ul class="dropdown-menu" role="menu">
                                                    <li><a href="javascript:;">Hourly</a></li>
                                                    <li><a href="javascript:;">Daily</a></li>
+                                                   <li><a href="javascript:;">Weekly</a></li>
                                                    <li><a href="javascript:;">Limit Reached</a></li>
                                                </ul>
                                            </div>

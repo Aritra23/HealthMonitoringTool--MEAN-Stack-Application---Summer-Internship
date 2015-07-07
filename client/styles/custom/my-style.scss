@@ -8,6 +8,11 @@
     height: 100%;
     width : auto;
 }
+.hb-background{
+ background : url(/images/HoneyBHealthStackedLogo.png) no-repeat center center transparent;
+    background-size: contain;
+    //position: fixed;
+}
 .input-collapse{
     width: 70px;
 }
