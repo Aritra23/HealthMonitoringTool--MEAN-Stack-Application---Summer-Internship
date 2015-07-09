@@ -12,8 +12,9 @@
                 symptom: '',
                 inpError : false
             };
-            String.prototype.replaceAll = function(s,r){return this.split(s).join(r).trim()};
 
+            //replaceAll function
+            String.prototype.replaceAll = function(s,r){return this.split(s).join(r).trim()};
 
             //hardcoding diseases
              $scope.diseaseList = [{name : "Heart Failure", selected : "false", imgsrc : ""},
@@ -50,8 +51,7 @@
             var rf = ["Weight", "BMI", "Resting Heart Rate", "Blood Pressure", "Oxygen Saturation", "Activity"];
             $scope.riskFactors = convertArrToJson(rf);
 
-            var rfAll = ["Weight", "BMI", "Resting Heart Rate", "Blood Pressure", "Oxygen Saturation", "Exercise/Activity", "Forced Expiratory Volume", "Peak Expiratory Flow", "Ventilation-Perfusion Ratio","Tobacco Cessation", "Heart Rate","Heart Rhythm", "Blood Glucose","HbA1c"];
-
+            var rfAll = ["Weight", "BMI", "Resting Heart Rate", "Blood Pressure", "Oxygen Saturation", "Activity", "Forced Expiratory Volume", "Peak Expiratory Flow", "Ventilation-Perfusion Ratio","Tobacco Cessation", "Heart Rate","Heart Rhythm", "Blood Glucose","HbA1c"];
 
             // hardcoding device features
             var df = ["Cost", "Smartphone Connectivity", "BP", "ECG", "HR", "SpO2", "Resp. Rate", "Steps", "Distance", "Calories", "Position", "Sleep", "Glucose", "EEG", "GSR", "Weight", "Fat %", "BMI", "Hydration", "Temperature"];
