@@ -7,6 +7,7 @@ var router = express.Router();
 // Connection URL
 var url = 'mongodb://dselaman:root@ds041032.mongolab.com:41032/honeybee';
 
+// service to fetch all devices
 router.get('/getAllDev', function(req, res) {
     var MongoClient = require('mongodb').MongoClient
         , assert = require('assert');
@@ -19,7 +20,6 @@ router.get('/getAllDev', function(req, res) {
              db.close();
         });
     });
-
     var findDocuments = function(db, callback) {
         // Get the documents collection
         var collection = db.collection('devicedb');
@@ -30,6 +30,7 @@ router.get('/getAllDev', function(req, res) {
     }
 });
 
+// service to fetch device features
 router.get('/getAllFeatures', function(req, res) {
     var MongoClient = require('mongodb').MongoClient
         , assert = require('assert');
@@ -50,6 +51,7 @@ router.get('/getAllFeatures', function(req, res) {
     });
 });
 
+// service to fetch all the disease-keymetrics mapping
 router.get('/getAllDiseases', function(req, res) {
     var MongoClient = require('mongodb').MongoClient
         , assert = require('assert');
