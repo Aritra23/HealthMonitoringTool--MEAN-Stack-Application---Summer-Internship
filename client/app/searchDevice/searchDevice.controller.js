@@ -4,7 +4,7 @@
 (function () {
     'use strict';
     angular.module('app.ui.form').controller('searchDeviceCtrl', [
-        '$scope', '$location', '$rootScope', '$route', '$document','filterFilter','logger','WizardHandler', function($scope, $location, $rootScope, $route, $document,filterFilter,logger,WizardHandler) {
+        '$scope', '$location', '$rootScope', '$route', '$document','filterFilter','logger','WizardHandler','$timeout', function($scope, $location, $rootScope, $route, $document,filterFilter,logger,WizardHandler,$timeout) {
 
             //scope variable initialization
             $scope.unusualList = [];
@@ -157,7 +157,10 @@
             $scope.notify = function(type) {
                 switch (type) {
                     case 'success':
-                        return logger.logSuccess("Thank You. Subscription has been made to the patient");
+                        $timeout(function(){
+                            $location.path("/");
+                        },2000);
+                        return logger.logSuccess("Thank You. Your device recommendations has been sent to the patient");
                     case 'warning':
                         return logger.logWarning("Warning!");
                     case 'error':
