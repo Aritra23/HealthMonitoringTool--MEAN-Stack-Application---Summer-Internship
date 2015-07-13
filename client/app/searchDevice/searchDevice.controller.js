@@ -155,10 +155,16 @@
             };
 
             $scope.notify = function(type) {
+
                 switch (type) {
                     case 'success':
                         $timeout(function(){
                             $location.path("/");
+
+                            // reset image paths on finish
+                            for(var item in $scope.deviceCategory){
+                                $scope.deviceCategory[item].imgsrc = "../images/device-category/"+$scope.deviceCategory[item].name.replaceAll(" ","")+".png";
+                            }
                         },2000);
                         return logger.logSuccess("Thank You. Your device recommendations has been sent to the patient");
                     case 'warning':
@@ -167,6 +173,16 @@
                         return logger.logError("Oh snap! Change a few things up and try submitting again.");
                 }
             };
+
+            $scope.addDevice = function(devCat,devSrc){
+                for(var val in $scope.deviceCategory){
+                    if(devCat == $scope.deviceCategory[val].name){
+                        $scope.deviceCategory[val].imgsrc = devSrc;
+                        console.log($scope.deviceCategory[val]);
+                    }
+                }
+
+            }
 
             return $scope.finishedWizard = function() {
                 //find device call

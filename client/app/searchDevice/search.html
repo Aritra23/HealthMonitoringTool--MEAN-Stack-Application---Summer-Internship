@@ -141,8 +141,11 @@
                             <div class="col-md-6 col-lg-6" ng-if="riskSelection.length > 0" ng-repeat="dc in deviceCategory">
                                 <!--<li class="list-group-item" wz-next><span class="size-h4" ng-bind="dc"></span> <button type="button" class="btn btn-info badge badge-info">View Devices</button></li>-->
                                         <section class="panel panel-box info-box" wz-next="isValidateStep3(dc.name)">
-                                            <div class="panel-left panel-item" style="padding: 0;">
+                                            <div class="panel-left panel-item" style="padding: 0;" ng-if="selectedDevices[dc.name] === undefined">
                                                 <img ng-src="{{dc.imgsrc}}" style="max-height:50%;max-width: 50%;">
+                                            </div>
+                                            <div class="panel-left panel-item" style="padding: 0;" ng-if="selectedDevices[dc.name]">
+                                                <img ng-src="{{selectedDevices[dc.name]}}" style="max-height:50%;max-width: 50%;">
                                             </div>
                                             <div class="panel-right panel-item bg-reverse" style="vertical-align: middle">
                                                 <p class="size-h3 no-margin"><label><span ng-bind="dc.name"></span></label></p>
@@ -196,7 +199,7 @@
                                     </ul>
                                 </div>
                                 <footer>
-                                    <a href="javascript:;" class="btn btn-success" wz-previous>Prescribe this</a>
+                                    <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/amiigoOximeter.png')">Prescribe this</a>
                                 </footer>
                             </section>
                         </div>
@@ -223,7 +226,7 @@
                                     </ul>
                                 </div>
                                 <footer>
-                                    <a href="javascript:;" class="btn btn-success" wz-previous>Prescribe this</a>
+                                    <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/withingspulse02.png')">Prescribe this</a>
                                 </footer>
                             </section>
                         </div>
@@ -250,7 +253,7 @@
                                     </ul>
                                 </div>
                                 <footer>
-                                    <a href="javascript:;" class="btn btn-success" wz-previous>Prescribe this</a>
+                                    <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/athosHR.png')">Prescribe this</a>
                                 </footer>
                             </section>
                         </div>
@@ -277,7 +280,7 @@
                                     </ul>
                                 </div>
                                 <footer>
-                                    <a href="javascript:;" class="btn btn-success" wz-previous>Prescribe this</a>
+                                    <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/atlasHR.png')">Prescribe this</a>
                                 </footer>
                             </section>
                         </div>
@@ -306,7 +309,7 @@
                                     </ul>
                                 </div>
                                 <footer>
-                                    <a href="javascript:;" class="btn btn-success" wz-previous>Prescribe this</a>
+                                    <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/fitbitone.png')">Prescribe this</a>
                                 </footer>
                             </section>
                         </div>
@@ -333,7 +336,7 @@
                                         </ul>
                                     </div>
                                     <footer>
-                                        <a href="javascript:;" class="btn btn-success" wz-previous>Prescribe this</a>
+                                        <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/fitbitflex.png')">Prescribe this</a>
                                     </footer>
                                 </section>
                             </div>
@@ -360,7 +363,7 @@
                                         </ul>
                                     </div>
                                     <footer>
-                                        <a href="javascript:;" class="btn btn-success" wz-previous>Prescribe this</a>
+                                        <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/nikefuelband.png')">Prescribe this</a>
                                     </footer>
                                 </section>
                             </div>
@@ -387,7 +390,7 @@
                                         </ul>
                                     </div>
                                     <footer>
-                                        <a href="javascript:;" class="btn btn-success" wz-previous>Prescribe this</a>
+                                        <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/withingspulse02.png')">Prescribe this</a>
                                     </footer>
                                 </section>
                             </div>
@@ -416,7 +419,7 @@
                                     </ul>
                                 </div>
                                 <footer>
-                                    <a href="javascript:;" class="btn btn-success" wz-previous>Prescribe this</a>
+                                    <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/withingssmartscale.png')">Prescribe this</a>
                                 </footer>
                             </section>
                         </div>
@@ -443,7 +446,7 @@
                                         </ul>
                                     </div>
                                     <footer>
-                                        <a href="javascript:;" class="btn btn-success" wz-previous>Prescribe this</a>
+                                        <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/healthOmeterbodycomp.png')">Prescribe this</a>
                                     </footer>
                                 </section>
                             </div>
@@ -470,7 +473,7 @@
                                         </ul>
                                     </div>
                                     <footer>
-                                        <a href="javascript:;" class="btn btn-success" wz-previous>Prescribe this</a>
+                                        <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/qardiobasebodycomp.png')">Prescribe this</a>
                                     </footer>
                                 </section>
                             </div>
@@ -497,7 +500,7 @@
                                         </ul>
                                     </div>
                                     <footer>
-                                        <a href="javascript:;" class="btn btn-success" wz-previous>Prescribe this</a>
+                                        <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/tanitabodycomp.png')">Prescribe this</a>
                                     </footer>
                                 </section>
                             </div>
@@ -524,7 +527,7 @@
                                         </ul>
                                     </div>
                                     <footer>
-                                        <a href="javascript:;" class="btn btn-success" wz-previous>Prescribe this</a>
+                                        <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/withingssmartbodycomp.png')">Prescribe this</a>
                                     </footer>
                                 </section>
                             </div>
@@ -553,7 +556,7 @@
                                         </ul>
                                     </div>
                                     <footer>
-                                        <a href="javascript:;" class="btn btn-success" wz-previous>Prescribe this</a>
+                                        <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/scoutECG.png')">Prescribe this</a>
                                     </footer>
                                 </section>
                             </div>
@@ -580,7 +583,7 @@
                                         </ul>
                                     </div>
                                     <footer>
-                                        <a href="javascript:;" class="btn btn-success" wz-previous>Prescribe this</a>
+                                        <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/amiigoOximeter.png')">Prescribe this</a>
                                     </footer>
                                 </section>
                             </div>
@@ -607,7 +610,7 @@
                                         </ul>
                                     </div>
                                     <footer>
-                                        <a href="javascript:;" class="btn btn-success" wz-previous>Prescribe this</a>
+                                        <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/tenkeOximeter.png')">Prescribe this</a>
                                     </footer>
                                 </section>
                             </div>
@@ -636,7 +639,7 @@
                                         </ul>
                                     </div>
                                     <footer>
-                                        <a href="javascript:;" class="btn btn-success" wz-previous>Prescribe this</a>
+                                        <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/blipBP.png')">Prescribe this</a>
                                     </footer>
                                 </section>
                             </div>
@@ -663,7 +666,7 @@
                                         </ul>
                                     </div>
                                     <footer>
-                                        <a href="javascript:;" class="btn btn-success" wz-previous>Prescribe this</a>
+                                        <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/iHealthBP.png')">Prescribe this</a>
                                     </footer>
                                 </section>
                             </div>
@@ -690,7 +693,7 @@
                                         </ul>
                                     </div>
                                     <footer>
-                                        <a href="javascript:;" class="btn btn-success" wz-previous>Prescribe this</a>
+                                        <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/withingsBP.png')">Prescribe this</a>
                                     </footer>
                                 </section>
                             </div>
