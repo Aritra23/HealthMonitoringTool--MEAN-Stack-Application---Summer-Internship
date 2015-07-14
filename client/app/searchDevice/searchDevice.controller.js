@@ -3,8 +3,31 @@
  */
 (function () {
     'use strict';
-    angular.module('app.ui.form').controller('searchDeviceCtrl', [
-        '$scope', '$location', '$rootScope', '$route', '$document','filterFilter','logger','WizardHandler','$timeout', function($scope, $location, $rootScope, $route, $document,filterFilter,logger,WizardHandler,$timeout) {
+    angular.module('app.ui').factory('searchDeviceFactory', ['$http',function ($http) {
+        var baseUrl = "http://localhost:9000/mongoapi";
+            return {
+            sayHello: function () {
+                return "Calling MongoDB";
+            },
+            getAllFeatures : function(){
+                $http({
+                  url: baseUrl + '/getAllFeatures',
+                  method : 'GET'
+              }).success(function(res){
+                      console.log('Connected to MongoDB', res);
+                      return res;
+                  })
+                    .error(function(){
+                        console.log("Could not connect to Mongo!!!");
+                        return;
+                    });
+
+          }
+        }
+    }]
+    )
+    .controller('searchDeviceCtrl', [
+        '$scope', '$location', '$rootScope', '$route', '$document','filterFilter','logger','WizardHandler','$timeout','searchDeviceFactory', function($scope, $location, $rootScope, $route, $document,filterFilter,logger,WizardHandler,$timeout,searchDeviceFactory) {
 
             //scope variable initialization
             $scope.unusualList = [];
@@ -12,6 +35,10 @@
                 symptom: '',
                 inpError : false
             };
+
+
+            //testing factory
+            console.log('Response::::',searchDeviceFactory.getAllFeatures());
 
             //replaceAll function
             String.prototype.replaceAll = function(s,r){return this.split(s).join(r).trim()};
@@ -43,6 +70,7 @@
                 }
                 return newarr;
             };
+
 
             //hardcoding patient characteristics
             $scope.patientChar = ["Visual Impairment", "Hearing Impairment", "Fine Motor Dexterity", "Cognitive Impairment", "Caregiver", "Peripheral Neuropathy"];
@@ -166,7 +194,7 @@
                                 $scope.deviceCategory[item].imgsrc = "../images/device-category/"+$scope.deviceCategory[item].name.replaceAll(" ","")+".png";
                             }
                         },2000);
-                        return logger.logSuccess("Thank You. Your device recommendations has been sent to the patient");
+                        return logger.logSuccess("Thank You. Your device recommendations have been sent to the patient");
                     case 'warning':
                         return logger.logWarning("Warning!");
                     case 'error':
