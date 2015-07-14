@@ -178,7 +178,7 @@
                 for(var val in $scope.deviceCategory){
                     if(devCat == $scope.deviceCategory[val].name){
                         $scope.deviceCategory[val].imgsrc = devSrc;
-                        console.log($scope.deviceCategory[val]);
+                        //console.log($scope.deviceCategory[val]);
                     }
                 }
 
