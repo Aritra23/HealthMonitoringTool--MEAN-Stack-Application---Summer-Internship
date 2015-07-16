@@ -6,3 +6,5 @@ client/bower_components/**
 .tmp/**
 .editorconfig
 CHANGELOG.md
+dist/**
+npm-debug.log

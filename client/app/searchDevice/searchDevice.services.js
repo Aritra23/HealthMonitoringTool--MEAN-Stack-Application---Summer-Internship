@@ -1,3 +1,4 @@
+
 /*
  * Created by aklahiri on 7/13/15.
  */
@@ -123,6 +124,12 @@
  };
  */
 /*(function () {
+=======
+/**
+ * Created by dselaman on 7/14/15.
+ */
+/*(function () {
+>>>>>>> d65eec3c10673c1ef0637b7958588cba53ccf0ec
     'use strict';
     angular.module('app.ui').factory('searchDeviceFactory', ['$http',function ($http) {
             var baseUrl = "http://localhost:9000/mongoapi";
@@ -147,6 +154,7 @@
             }
         }]
     );
+<<<<<<< HEAD
 
 success(function(data) {
     dataCtrl.data = data;
@@ -154,3 +162,5 @@ success(function(data) {
     return dataCtrl.data;
 });
 });*/
+
+

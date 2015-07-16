@@ -2,9 +2,7 @@
  * Created by Dilip on 6/2/2015.
  */
 (function () {
-    'use strict';
-
-
+    //'use strict';
     angular.module('app.ui').factory('searchDeviceFactory', ['$http', function ($http) {
             var baseUrl = "http://localhost:9000/mongoapi";
             var dataCtrl = this;
@@ -44,8 +42,7 @@
         }]
     )
         .controller('searchDeviceCtrl', [
-            '$scope', '$location', '$rootScope', '$route', '$document', 'filterFilter', 'logger', 'WizardHandler', '$timeout', 'searchDeviceFactory',  function ($scope, $location, $rootScope, $route, $document, filterFilter, logger, WizardHandler, $timeout, searchDeviceFactory) {
-
+            '$scope', '$location', '$rootScope', '$route', '$document', 'filterFilter', 'logger', 'WizardHandler', '$timeout', 'searchDeviceFactory', 'responseData', function ($scope, $location, $rootScope, $route, $document, filterFilter, logger, WizardHandler, $timeout, searchDeviceFactory,responseData) {
 
                 //scope variable initialization
                 $scope.unusualList = [];
@@ -58,7 +55,7 @@
                 //testing factory
                 console.log('Response::::', searchDeviceFactory.getAllFeatures());
 
-                //console.log('Disease List', searchDeviceFactory.getAllDiseases());
+                console.log('Disease List', searchDeviceFactory.getAllDiseases());
 
                 //replaceAll function
                 String.prototype.replaceAll = function (s, r) {
@@ -69,12 +66,12 @@
                 //$scope.diseaseList = [];
                 //$scope.diseaseList = [];
                 //hardcoding diseases
-                $scope.diseaseList = [{name : "Heart Failure", selected : "false", imgsrc : ""},
+               /* $scope.diseaseList = [{name : "Heart Failure", selected : "false", imgsrc : ""},
                  {name : "COPD", selected : "false", imgsrc : ""},
                  {name : "Atrial Fibrillation", selected : "false", imgsrc : ""},
-                 {name : "Diabetes", selected : "false", imgsrc : ""}];
+                 {name : "Diabetes", selected : "false", imgsrc : ""}];*/
 
-               /* function getDiseases() {
+               function getDiseases() {
                     searchDeviceFactory.getAllDiseases().then(function (responseData) {
                         $scope.diseaseList = responseData;
                         console.log("DL:", $scope.diseaseList);
@@ -82,7 +79,7 @@
                     for (var item in $scope.diseaseList) {
                         $scope.diseaseList.push({name: $scope.diseaseList[item].name, selected: "false", imgsrc: ""});
                     }
-                }*/
+                }
 
 
                 /* function getDiseases(){
@@ -237,11 +234,11 @@
                 };
 
                 //watchers
-                $scope.$watch('diseaseList|filter:{selected:true}', function (nv) {
+                /*$scope.$watch('diseaseList|filter:{selected:true}', function (nv) {
                  $scope.diseaseSelection = nv.map(function (item) {
                  return item.name;
                  });
-                 }, true);
+                 }, true);*/
                 $scope.$watch('riskFactors|filter:{selected:true}', function (nv) {
                     $scope.riskSelection = nv.map(function (item) {
                         return item.name;
@@ -310,44 +307,41 @@
 
                 };
 
-                $scope.notify = function (type) {
 
-                    switch (type) {
-                        case 'success':
-                            $timeout(function () {
-                                $location.path("/");
 
-                                // reset image paths on finish
-                                for (var item in $scope.deviceCategory) {
-                                    $scope.deviceCategory[item].imgsrc = "../images/device-category/" + $scope.deviceCategory[item].name.replaceAll(" ", "") + ".png";
-                                }
-                            }, 2000);
-                            return logger.logSuccess("Thank You. Your device recommendations have been sent to the patient");
-                        case 'warning':
-                            return logger.logWarning("Warning!");
-                        case 'error':
-                            return logger.logError("Oh snap! Change a few things up and try submitting again.");
-                    }
-                };
 
-                $scope.addDevice = function (devCat, devSrc) {
-                    for (var val in $scope.deviceCategory) {
-                        if (devCat == $scope.deviceCategory[val].name) {
-                            $scope.deviceCategory[val].imgsrc = devSrc;
-                            //console.log($scope.deviceCategory[val]);
+
+
+                    $scope.notify = function (type) {
+
+                        switch (type) {
+                            case 'success':
+                                $timeout(function () {
+                                    $location.path("/");
+
+                                    // reset image paths on finish
+                                    for (var item in $scope.deviceCategory) {
+                                        $scope.deviceCategory[item].imgsrc = "../images/device-category/" + $scope.deviceCategory[item].name.replaceAll(" ", "") + ".png";
+                                    }
+                                }, 2000);
+                                return logger.logSuccess("Thank You. Your device recommendations have been sent to the patient");
+                            case 'warning':
+                                return logger.logWarning("Warning!");
+                            case 'error':
+                                return logger.logError("Oh snap! Change a few things up and try submitting again.");
+
                         }
+
+                    }
+                        return $scope.finishedWizard = function () {
+                            //find device call
+                            alert("Thank You. Subscription has been made to the patient");
+                        };
                     }
 
-                }
 
-                return $scope.finishedWizard = function () {
-                    //find device call
-                    alert("Thank You. Subscription has been made to the patient");
-                };
-            }
-        ]);
+                ]);
 
 
-
-});
+})();
 

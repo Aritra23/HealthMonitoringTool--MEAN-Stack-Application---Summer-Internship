@@ -1,4 +1,4 @@
-"use strict";
+//"use strict";
 var LIVERELOAD_PORT, lrSnippet, mountFolder;
 
 LIVERELOAD_PORT = 35728;
