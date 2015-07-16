@@ -9,10 +9,11 @@
     width : auto;
 }
 /* code for background image */
-/*.hb-background{
- background : url(/images/HoneyBHealthStackedLogo.png) no-repeat center center transparent;
-background-size: contain;
-}*/
+.hb-background{
+ background : url(/images/HoneyBHealthLogoTransparent.png) no-repeat right transparent;
+ background-size: contain;
+    //position: fixed;
+}
 .input-collapse{
     width: 70px;
 }

@@ -32,11 +32,11 @@
                     <h2 class="size-h2 form-header">Select disease</h2>
                     <div class="divider divider-lg"></div>
                     <form name="wizard_step1">
-                            <!--<div class="form-group input-group">
-                                <label class="ui-checkbox col-md-5" style="padding-left: 0px !important;" ng-repeat="d in diseaseList">
-                                    <input name="selectedDiseases[]" type="checkbox" value={{d.name}} ng-model="d.selected"><span ng-bind="d.name"></span>
-                                </label>
-                            </div>-->
+                        <!--<div class="form-group input-group">
+                            <label class="ui-checkbox col-md-5" style="padding-left: 0px !important;" ng-repeat="d in diseaseList">
+                                <input name="selectedDiseases[]" type="checkbox" value={{d.name}} ng-model="d.selected"><span ng-bind="d.name"></span>
+                            </label>
+                        </div>-->
                         <div class="row">
                             <div class="col-md-6 col-lg-6" ng-repeat="d in diseaseList">
                                 <section class="panel panel-box info-box" wz-next ng-click="isValidateStep1(d.name)">
@@ -62,39 +62,15 @@
                     <form name="wizard_step2">
                         <div class="form-group input-group">
                             <div class="row-fluid">
-                            <label class="ui-checkbox col-md-5" data-ng-controller="CollapseDemoCtrl" style="padding-left: 0px !important;" ng-repeat="rf in riskFactors">
-                                <input name="selectedRisks[]" type="checkbox" value={{rf.name}} ng-model="rf.selected" ng-click="isCollapsed = !isCollapsed"><span ng-bind="rf.name"></span>
-                                <ul class="collapse" collapse="!isCollapsed">
-                                       <li class="metricInput list-group-item-success">
-                                        <label class="ui-checkbox" style="margin: 10px 20px 10px 20px;"><span class="b"> Current : </span> <input type="text" class="input-collapse" placeholder=" units"></label>
-                                        <label class="ui-checkbox" style="margin: 10px 20px 10px 20px;"><span class="b"> Limit : </span> <input type="text" class="input-collapse" placeholder=" units"></label>
-                                        <label class="ui-checkbox" style="margin: 10px 20px 10px 20px;">
-                                           <div class="open" dropdown="" is-open="status.isopen1">
-                                               <button type="button"  class="btn btn-default dropdown-toggle" dropdown-toggle="" ng-disabled="disabled"> Frequency <span class="caret"></span> </button>
-                                               <ul class="dropdown-menu" role="menu">
-                                                   <li><a href="javascript:;">Hourly</a></li>
-                                                   <li><a href="javascript:;">Daily</a></li>
-                                                   <li><a href="javascript:;">Weekly</a></li>
-                                                   <li><a href="javascript:;">Limit Reached</a></li>
-                                               </ul>
-                                           </div>
-                                        </label>
-                                       </li>
-                                </ul>
-                            </label>
-                            </div>
-                            <div class="row-fluid" data-ng-controller="CollapseDemoCtrl">
-                                <h2 class="size-h2 col-md-12 form-header" style="padding-left: 0;" ng-click="isCollapsed = !isCollapsed;">Additional Key Metrics <span class="fa fa-angle-double-right"></span></h2>
-                                <div class="row-fluid" collapse="!isCollapsed">
-                                <label class="ui-checkbox col-md-5" data-ng-controller="CollapseDemoCtrl" style="padding-left: 0px !important;" ng-repeat="rf in otherRisks">
+                                <label class="ui-checkbox col-md-5" data-ng-controller="CollapseDemoCtrl" style="padding-left: 0px !important;" ng-repeat="rf in riskFactors">
                                     <input name="selectedRisks[]" type="checkbox" value={{rf.name}} ng-model="rf.selected" ng-click="isCollapsed = !isCollapsed"><span ng-bind="rf.name"></span>
                                     <ul class="collapse" collapse="!isCollapsed">
                                         <li class="metricInput list-group-item-success">
-                                            <label class="ui-checkbox" style="margin: 10px 20px 10px 20px;"><span class="b"> Current : </span> <input type="text" placeholder=" units" class="input-collapse"></label>
-                                            <label class="ui-checkbox" style="margin: 10px 20px 10px 20px;"><span class="b"> Limit : </span> <input type="text" placeholder=" units" class="input-collapse"></label>
+                                            <label class="ui-checkbox" style="margin: 10px 20px 10px 20px;"><span class="b"> Current : </span> <input type="text" class="input-collapse" placeholder=" units"></label>
+                                            <label class="ui-checkbox" style="margin: 10px 20px 10px 20px;"><span class="b"> Limit : </span> <input type="text" class="input-collapse" placeholder=" units"></label>
                                             <label class="ui-checkbox" style="margin: 10px 20px 10px 20px;">
                                                 <div class="open" dropdown="" is-open="status.isopen1">
-                                                    <button type="button"  class="btn btn-default dropdown-toggle" dropdown-toggle="" ng-disabled="disabled"> Frequency <span class="caret"></span> </button>
+                                                    <button type="button"  class="btn btn-default dropdown-toggle" dropdown-toggle> Frequency <span class="caret"></span> </button>
                                                     <ul class="dropdown-menu" role="menu">
                                                         <li><a href="javascript:;">Hourly</a></li>
                                                         <li><a href="javascript:;">Daily</a></li>
@@ -106,6 +82,30 @@
                                         </li>
                                     </ul>
                                 </label>
+                            </div>
+                            <div class="row-fluid" data-ng-controller="CollapseDemoCtrl">
+                                <h2 class="size-h2 col-md-12 form-header" style="padding-left: 0;" ng-click="isCollapsed = !isCollapsed;">Additional Metrics <span class="fa fa-angle-double-right"></span></h2>
+                                <div class="row-fluid" collapse="!isCollapsed">
+                                    <label class="ui-checkbox col-md-5" data-ng-controller="CollapseDemoCtrl" style="padding-left: 0px !important;" ng-repeat="rf in otherRisks">
+                                        <input name="selectedRisks[]" type="checkbox" value={{rf.name}} ng-model="rf.selected" ng-click="isCollapsed = !isCollapsed"><span ng-bind="rf.name"></span>
+                                        <ul class="collapse" collapse="!isCollapsed">
+                                            <li class="metricInput list-group-item-success">
+                                                <label class="ui-checkbox" style="margin: 10px 20px 10px 20px;"><span class="b"> Current : </span> <input type="text" placeholder=" units" class="input-collapse"></label>
+                                                <label class="ui-checkbox" style="margin: 10px 20px 10px 20px;"><span class="b"> Limit : </span> <input type="text" placeholder=" units" class="input-collapse"></label>
+                                                <label class="ui-checkbox" style="margin: 10px 20px 10px 20px;">
+                                                    <div class="open" dropdown="" is-open="status.isopen1">
+                                                        <button type="button"  class="btn btn-default dropdown-toggle" dropdown-toggle="" ng-disabled="disabled"> Frequency <span class="caret"></span> </button>
+                                                        <ul class="dropdown-menu" role="menu">
+                                                            <li><a href="javascript:;">Hourly</a></li>
+                                                            <li><a href="javascript:;">Daily</a></li>
+                                                            <li><a href="javascript:;">Weekly</a></li>
+                                                            <li><a href="javascript:;">Limit Reached</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -140,14 +140,17 @@
                             </div>
                             <div class="col-md-6 col-lg-6" ng-if="riskSelection.length > 0" ng-repeat="dc in deviceCategory">
                                 <!--<li class="list-group-item" wz-next><span class="size-h4" ng-bind="dc"></span> <button type="button" class="btn btn-info badge badge-info">View Devices</button></li>-->
-                                        <section class="panel panel-box info-box" wz-next="isValidateStep3(dc.name)">
-                                            <div class="panel-left panel-item" style="padding: 0;">
-                                                <img ng-src="{{dc.imgsrc}}" style="max-height:50%;max-width: 50%;">
-                                            </div>
-                                            <div class="panel-right panel-item bg-reverse" style="vertical-align: middle">
-                                                <p class="size-h3 no-margin"><label><span ng-bind="dc.name"></span></label></p>
-                                            </div>
-                                        </section>
+                                <section class="panel panel-box info-box" wz-next="isValidateStep3(dc.name)">
+                                    <div class="panel-left panel-item" style="padding: 0;" ng-if="selectedDevices[dc.name] === undefined">
+                                        <img ng-src="{{dc.imgsrc}}" style="max-height:50%;max-width: 50%;">
+                                    </div>
+                                    <div class="panel-left panel-item" style="padding: 0;" ng-if="selectedDevices[dc.name]">
+                                        <img ng-src="{{selectedDevices[dc.name]}}" style="max-height:50%;max-width: 50%;">
+                                    </div>
+                                    <div class="panel-right panel-item bg-reverse" style="vertical-align: middle">
+                                        <p class="size-h3 no-margin"><label><span ng-bind="dc.name"></span></label></p>
+                                    </div>
+                                </section>
                             </div>
                         </div>
                     </form>
@@ -171,62 +174,530 @@
                         </div>
                     </div>
                     <div class="divider divider-lg"></div>
-                    <form name="wizard_step4">
-                    <div class="row">
-                        <div class="col-md-3 col-xsm-6">
-                            <section class="pricing-table pricing-table-success">
-                                <header>Image of the device</header>
-                                <div class="pricing-body">
-                                    <div class="pricing-price">
-                                        <strong>Withings Smart Scale</strong>
-                                    </div>
-                                    <ul data-ng-controller="CollapseDemoCtrl" style="text-align: left">
-                                        <li><strong> Cost : </strong> $149.99 </li>
-                                        <li ng-click="isCollapsed = !isCollapsed"><strong> Technical Specification</strong></li>
-                                        <div class="row-fluid" collapse="!isCollapsed">
-                                            <ul style="list-style: none">
-                                            <li><strong> Air quality Screening : </strong> Yes </li>
-                                            <li><strong> Daily Report : </strong> Yes </li>
-                                            <li><strong> Body Fat : </strong> Yes </li>
-                                            </ul>
+                    <form name="wizard_step4" ng-switch="devCat">
+                        <div class="row" ng-switch-when="Heart Rate Monitor">
+                            <div class="col-md-3 col-lg-3 col-xsm-6">
+                                <section class="pricing-table pricing-table-success">
+                                    <header><img style="width: 100%;" src="../images/device-images/amiigoOximeter.png"></header>
+                                    <div class="pricing-body">
+                                        <div class="pricing-price btn btn-success" style="display:block;" wz-previous="addDevice('{{devCat}}','../images/device-images/amiigoOximeter.png')">
+                                            <strong>Amigo Oximeter</strong>
                                         </div>
-                                        <li popover-placement="right" popover-title="Options" popover-append-to-body="true" popover="SMS,Email"><strong>Modalities</strong></li>
-                                        <!--forcing background-color since it does not render as expected-->
-                                        <li popover-placement="right" popover-title="Requires" popover-append-to-body="true" popover="Smartphone" style="background-color: #f9f9f9;"><strong>Usability</strong></li>
-                                    </ul>
-                                </div>
-                                <footer>
-                                    <a href="javascript:;" class="btn btn-success" wz-previous>Prescribe this</a>
-                                </footer>
-                            </section>
-                        </div>
-                        <div class="col-md-3 col-xsm-6">
-                            <section class="pricing-table pricing-table-success">
-                                <header>Image of the device</header>
-                                <div class="pricing-body">
-                                    <div class="pricing-price">
-                                        <strong>Withings Smart Scale</strong>
+                                        <ul data-ng-controller="CollapseDemoCtrl" style="text-align: left">
+                                            <li><strong> Cost : </strong> $149.99 </li>
+                                            <li ng-click="isCollapsed = !isCollapsed"><strong> Technical Specification</strong></li>
+                                            <div class="row-fluid" collapse="!isCollapsed">
+                                                <ul style="list-style: none">
+                                                    <li><strong> Air quality Screening : </strong> Yes </li>
+                                                    <li><strong> Daily Report : </strong> Yes </li>
+                                                    <li><strong> Body Fat : </strong> Yes </li>
+                                                </ul>
+                                            </div>
+                                            <li popover-placement="right" popover-title="Options" popover-append-to-body="true" popover="SMS,Email"><strong>Modalities</strong></li>
+                                            <!--forcing background-color since it does not render as expected-->
+                                            <li popover-placement="right" popover-title="Requires" popover-append-to-body="true" popover="Smartphone" style="background-color: #f9f9f9;"><strong>Usability</strong></li>
+                                        </ul>
                                     </div>
-                                    <ul data-ng-controller="CollapseDemoCtrl" style="text-align: left">
-                                        <li><strong> Cost : </strong> $149.99 </li>
-                                        <li ng-click="isCollapsed = !isCollapsed"><strong> Technical Specification </strong></li>
-                                        <div class="row-fluid" collapse="!isCollapsed">
-                                            <ul style="list-style: none">
-                                                <li><strong> Air quality Screening : </strong> Yes </li>
-                                                <li><strong> Daily Report : </strong> Yes </li>
-                                                <li><strong> Body Fat : </strong> Yes </li>
-                                            </ul>
+                                    <footer>
+                                        <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/amiigoOximeter.png')">Prescribe this</a>
+                                    </footer>
+                                </section>
+                            </div>
+                            <div class="col-md-3 col-lg-3 col-xsm-6">
+                                <section class="pricing-table pricing-table-success">
+                                    <header><img style="width: 100%;" src="../images/device-images/withingspulse02.png"></header>
+                                    <div class="pricing-body">
+                                        <div class="pricing-price btn btn-success" style="display:block;" wz-previous="addDevice('{{devCat}}','../images/device-images/withingspulse02.png')">
+                                            <strong>Withings Pulse O2</strong>
                                         </div>
-                                        <li popover-placement="right" popover-title="Options" popover-append-to-body="true" popover="Web Profile,SMS,Email"><strong>Modalities</strong></li>
-                                        <li popover-placement="right" popover-title="Requires" popover-append-to-body="true" popover="Smartphone" style="background-color: #f9f9f9;"><strong>Usability</strong></li>
-                                    </ul>
-                                </div>
-                                <footer>
-                                    <a href="javascript:;" class="btn btn-success" wz-previous>Prescribe this</a>
-                                </footer>
-                            </section>
+                                        <ul data-ng-controller="CollapseDemoCtrl" style="text-align: left">
+                                            <li><strong> Cost : </strong> $149.99 </li>
+                                            <li ng-click="isCollapsed = !isCollapsed"><strong> Technical Specification</strong></li>
+                                            <div class="row-fluid" collapse="!isCollapsed">
+                                                <ul style="list-style: none">
+                                                    <li><strong> Air quality Screening : </strong> Yes </li>
+                                                    <li><strong> Daily Report : </strong> Yes </li>
+                                                    <li><strong> Body Fat : </strong> Yes </li>
+                                                </ul>
+                                            </div>
+                                            <li popover-placement="right" popover-title="Options" popover-append-to-body="true" popover="SMS,Email"><strong>Modalities</strong></li>
+                                            <!--forcing background-color since it does not render as expected-->
+                                            <li popover-placement="right" popover-title="Requires" popover-append-to-body="true" popover="Smartphone" style="background-color: #f9f9f9;"><strong>Usability</strong></li>
+                                        </ul>
+                                    </div>
+                                    <footer>
+                                        <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/withingspulse02.png')">Prescribe this</a>
+                                    </footer>
+                                </section>
+                            </div>
+                            <div class="col-md-3 col-lg-3 col-xsm-6">
+                                <section class="pricing-table pricing-table-success">
+                                    <header><img style="width: 100%;" src="../images/device-images/athosHR.png"></header>
+                                    <div class="pricing-body">
+                                        <div class="pricing-price btn btn-success" style="display:block;" wz-previous="addDevice('{{devCat}}','../images/device-images/athosHR.png')">
+                                            <strong>Athos HR</strong>
+                                        </div>
+                                        <ul data-ng-controller="CollapseDemoCtrl" style="text-align: left">
+                                            <li><strong> Cost : </strong> $149.99 </li>
+                                            <li ng-click="isCollapsed = !isCollapsed"><strong> Technical Specification</strong></li>
+                                            <div class="row-fluid" collapse="!isCollapsed">
+                                                <ul style="list-style: none">
+                                                    <li><strong> Air quality Screening : </strong> Yes </li>
+                                                    <li><strong> Daily Report : </strong> Yes </li>
+                                                    <li><strong> Body Fat : </strong> Yes </li>
+                                                </ul>
+                                            </div>
+                                            <li popover-placement="right" popover-title="Options" popover-append-to-body="true" popover="SMS,Email"><strong>Modalities</strong></li>
+                                            <!--forcing background-color since it does not render as expected-->
+                                            <li popover-placement="right" popover-title="Requires" popover-append-to-body="true" popover="Smartphone" style="background-color: #f9f9f9;"><strong>Usability</strong></li>
+                                        </ul>
+                                    </div>
+                                    <footer>
+                                        <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/athosHR.png')">Prescribe this</a>
+                                    </footer>
+                                </section>
+                            </div>
+                            <div class="col-md-3 col-lg-3 col-xsm-6">
+                                <section class="pricing-table pricing-table-success">
+                                    <header><img style="width: 100%;" src="../images/device-images/atlasHR.png"></header>
+                                    <div class="pricing-body">
+                                        <div class="pricing-price btn btn-success" style="display:block;" wz-previous="addDevice('{{devCat}}','../images/device-images/atlasHR.png')">
+                                            <strong>Atlas HR</strong>
+                                        </div>
+                                        <ul data-ng-controller="CollapseDemoCtrl" style="text-align: left">
+                                            <li><strong> Cost : </strong> $149.99 </li>
+                                            <li ng-click="isCollapsed = !isCollapsed"><strong> Technical Specification</strong></li>
+                                            <div class="row-fluid" collapse="!isCollapsed">
+                                                <ul style="list-style: none">
+                                                    <li><strong> Air quality Screening : </strong> Yes </li>
+                                                    <li><strong> Daily Report : </strong> Yes </li>
+                                                    <li><strong> Body Fat : </strong> Yes </li>
+                                                </ul>
+                                            </div>
+                                            <li popover-placement="right" popover-title="Options" popover-append-to-body="true" popover="SMS,Email"><strong>Modalities</strong></li>
+                                            <!--forcing background-color since it does not render as expected-->
+                                            <li popover-placement="right" popover-title="Requires" popover-append-to-body="true" popover="Smartphone" style="background-color: #f9f9f9;"><strong>Usability</strong></li>
+                                        </ul>
+                                    </div>
+                                    <footer>
+                                        <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/atlasHR.png')">Prescribe this</a>
+                                    </footer>
+                                </section>
+                            </div>
                         </div>
-                    </div>
+                        <div class="row" ng-switch-when="Activity Tracker">
+                            <div class="col-md-3 col-lg-3 col-xsm-6">
+                                <section class="pricing-table pricing-table-success">
+                                    <header><img style="width: 100%;" src="../images/device-images/fitbitone.png"></header>
+                                    <div class="pricing-body">
+                                        <div class="pricing-price btn btn-success" style="display:block;" wz-previous="addDevice('{{devCat}}','../images/device-images/fitbitone.png')">
+                                            <strong>Fitbit One</strong>
+                                        </div>
+                                        <ul data-ng-controller="CollapseDemoCtrl" style="text-align: left">
+                                            <li><strong> Cost : </strong> $149.99 </li>
+                                            <li ng-click="isCollapsed = !isCollapsed"><strong> Technical Specification</strong></li>
+                                            <div class="row-fluid" collapse="!isCollapsed">
+                                                <ul style="list-style: none">
+                                                    <li><strong> Air quality Screening : </strong> Yes </li>
+                                                    <li><strong> Daily Report : </strong> Yes </li>
+                                                    <li><strong> Body Fat : </strong> Yes </li>
+                                                </ul>
+                                            </div>
+                                            <li popover-placement="right" popover-title="Options" popover-append-to-body="true" popover="SMS,Email"><strong>Modalities</strong></li>
+                                            <!--forcing background-color since it does not render as expected-->
+                                            <li popover-placement="right" popover-title="Requires" popover-append-to-body="true" popover="Smartphone" style="background-color: #f9f9f9;"><strong>Usability</strong></li>
+                                        </ul>
+                                    </div>
+                                    <footer>
+                                        <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/fitbitone.png')">Prescribe this</a>
+                                    </footer>
+                                </section>
+                            </div>
+                            <div class="col-md-3 col-lg-3 col-xsm-6">
+                                <section class="pricing-table pricing-table-success">
+                                    <header><img style="width: 100%;" src="../images/device-images/fitbitflex.png"></header>
+                                    <div class="pricing-body">
+                                        <div class="pricing-price btn btn-success" style="display:block;" wz-previous="addDevice('{{devCat}}','../images/device-images/fitbitflex.png')">
+                                            <strong>Fitbit Flex</strong>
+                                        </div>
+                                        <ul data-ng-controller="CollapseDemoCtrl" style="text-align: left">
+                                            <li><strong> Cost : </strong> $149.99 </li>
+                                            <li ng-click="isCollapsed = !isCollapsed"><strong> Technical Specification</strong></li>
+                                            <div class="row-fluid" collapse="!isCollapsed">
+                                                <ul style="list-style: none">
+                                                    <li><strong> Air quality Screening : </strong> Yes </li>
+                                                    <li><strong> Daily Report : </strong> Yes </li>
+                                                    <li><strong> Body Fat : </strong> Yes </li>
+                                                </ul>
+                                            </div>
+                                            <li popover-placement="right" popover-title="Options" popover-append-to-body="true" popover="SMS,Email"><strong>Modalities</strong></li>
+                                            <!--forcing background-color since it does not render as expected-->
+                                            <li popover-placement="right" popover-title="Requires" popover-append-to-body="true" popover="Smartphone" style="background-color: #f9f9f9;"><strong>Usability</strong></li>
+                                        </ul>
+                                    </div>
+                                    <footer>
+                                        <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/fitbitflex.png')">Prescribe this</a>
+                                    </footer>
+                                </section>
+                            </div>
+                            <div class="col-md-3 col-lg-3 col-xsm-6">
+                                <section class="pricing-table pricing-table-success">
+                                    <header><img style="width: 100%;" src="../images/device-images/nikefuelband.png"></header>
+                                    <div class="pricing-body">
+                                        <div class="pricing-price btn btn-success" style="display:block;" wz-previous="addDevice('{{devCat}}','../images/device-images/nikefuelband.png')">
+                                            <strong>Nike Fuel Band</strong>
+                                        </div>
+                                        <ul data-ng-controller="CollapseDemoCtrl" style="text-align: left">
+                                            <li><strong> Cost : </strong> $149.99 </li>
+                                            <li ng-click="isCollapsed = !isCollapsed"><strong> Technical Specification</strong></li>
+                                            <div class="row-fluid" collapse="!isCollapsed">
+                                                <ul style="list-style: none">
+                                                    <li><strong> Air quality Screening : </strong> Yes </li>
+                                                    <li><strong> Daily Report : </strong> Yes </li>
+                                                    <li><strong> Body Fat : </strong> Yes </li>
+                                                </ul>
+                                            </div>
+                                            <li popover-placement="right" popover-title="Options" popover-append-to-body="true" popover="SMS,Email"><strong>Modalities</strong></li>
+                                            <!--forcing background-color since it does not render as expected-->
+                                            <li popover-placement="right" popover-title="Requires" popover-append-to-body="true" popover="Smartphone" style="background-color: #f9f9f9;"><strong>Usability</strong></li>
+                                        </ul>
+                                    </div>
+                                    <footer>
+                                        <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/nikefuelband.png')">Prescribe this</a>
+                                    </footer>
+                                </section>
+                            </div>
+                            <div class="col-md-3 col-lg-3 col-xsm-6">
+                                <section class="pricing-table pricing-table-success">
+                                    <header><img style="width: 100%;" src="../images/device-images/withingspulse02.png"></header>
+                                    <div class="pricing-body">
+                                        <div class="pricing-price btn btn-success" style="display:block;" wz-previous="addDevice('{{devCat}}','../images/device-images/withingspulse02.png')">
+                                            <strong>Withings Pulse O2</strong>
+                                        </div>
+                                        <ul data-ng-controller="CollapseDemoCtrl" style="text-align: left">
+                                            <li><strong> Cost : </strong> $149.99 </li>
+                                            <li ng-click="isCollapsed = !isCollapsed"><strong> Technical Specification</strong></li>
+                                            <div class="row-fluid" collapse="!isCollapsed">
+                                                <ul style="list-style: none">
+                                                    <li><strong> Air quality Screening : </strong> Yes </li>
+                                                    <li><strong> Daily Report : </strong> Yes </li>
+                                                    <li><strong> Body Fat : </strong> Yes </li>
+                                                </ul>
+                                            </div>
+                                            <li popover-placement="right" popover-title="Options" popover-append-to-body="true" popover="SMS,Email"><strong>Modalities</strong></li>
+                                            <!--forcing background-color since it does not render as expected-->
+                                            <li popover-placement="right" popover-title="Requires" popover-append-to-body="true" popover="Smartphone" style="background-color: #f9f9f9;"><strong>Usability</strong></li>
+                                        </ul>
+                                    </div>
+                                    <footer>
+                                        <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/withingspulse02.png')">Prescribe this</a>
+                                    </footer>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="row" ng-switch-when="Body Composition Analyzer">
+                            <div class="col-md-3 col-lg-3 col-xsm-6">
+                                <section class="pricing-table pricing-table-success">
+                                    <header><img style="width: 100%;" src="../images/device-images/withingssmartscale.png"></header>
+                                    <div class="pricing-body">
+                                        <div class="pricing-price btn btn-success" style="display:block;" wz-previous="addDevice('{{devCat}}','../images/device-images/withingssmartscale.png')">
+                                            <strong>Withings Smart Scale</strong>
+                                        </div>
+                                        <ul data-ng-controller="CollapseDemoCtrl" style="text-align: left">
+                                            <li><strong> Cost : </strong> $149.99 </li>
+                                            <li ng-click="isCollapsed = !isCollapsed"><strong> Technical Specification</strong></li>
+                                            <div class="row-fluid" collapse="!isCollapsed">
+                                                <ul style="list-style: none">
+                                                    <li><strong> Air quality Screening : </strong> Yes </li>
+                                                    <li><strong> Daily Report : </strong> Yes </li>
+                                                    <li><strong> Body Fat : </strong> Yes </li>
+                                                </ul>
+                                            </div>
+                                            <li popover-placement="right" popover-title="Options" popover-append-to-body="true" popover="SMS,Email"><strong>Modalities</strong></li>
+                                            <!--forcing background-color since it does not render as expected-->
+                                            <li popover-placement="right" popover-title="Requires" popover-append-to-body="true" popover="Smartphone" style="background-color: #f9f9f9;"><strong>Usability</strong></li>
+                                        </ul>
+                                    </div>
+                                    <footer>
+                                        <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/withingssmartscale.png')">Prescribe this</a>
+                                    </footer>
+                                </section>
+                            </div>
+                            <div class="col-md-3 col-lg-3 col-xsm-6">
+                                <section class="pricing-table pricing-table-success">
+                                    <header><img style="width: 100%;" src="../images/device-images/healthOmeterbodycomp.png"></header>
+                                    <div class="pricing-body">
+                                        <div class="pricing-price btn btn-success" style="display:block;" wz-previous="addDevice('{{devCat}}','../images/device-images/healthOmeterbodycomp.png')">
+                                            <strong>Health O Meter</strong>
+                                        </div>
+                                        <ul data-ng-controller="CollapseDemoCtrl" style="text-align: left">
+                                            <li><strong> Cost : </strong> $149.99 </li>
+                                            <li ng-click="isCollapsed = !isCollapsed"><strong> Technical Specification</strong></li>
+                                            <div class="row-fluid" collapse="!isCollapsed">
+                                                <ul style="list-style: none">
+                                                    <li><strong> Air quality Screening : </strong> Yes </li>
+                                                    <li><strong> Daily Report : </strong> Yes </li>
+                                                    <li><strong> Body Fat : </strong> Yes </li>
+                                                </ul>
+                                            </div>
+                                            <li popover-placement="right" popover-title="Options" popover-append-to-body="true" popover="SMS,Email"><strong>Modalities</strong></li>
+                                            <!--forcing background-color since it does not render as expected-->
+                                            <li popover-placement="right" popover-title="Requires" popover-append-to-body="true" popover="Smartphone" style="background-color: #f9f9f9;"><strong>Usability</strong></li>
+                                        </ul>
+                                    </div>
+                                    <footer>
+                                        <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/healthOmeterbodycomp.png')">Prescribe this</a>
+                                    </footer>
+                                </section>
+                            </div>
+                            <div class="col-md-3 col-lg-3 col-xsm-6">
+                                <section class="pricing-table pricing-table-success">
+                                    <header><img style="width: 100%;" src="../images/device-images/qardiobasebodycomp.png"></header>
+                                    <div class="pricing-body">
+                                        <div class="pricing-price btn btn-success" style="display:block;" wz-previous="addDevice('{{devCat}}','../images/device-images/qardiobasebodycomp.png')">
+                                            <strong>Cardio Based Body Composition</strong>
+                                        </div>
+                                        <ul data-ng-controller="CollapseDemoCtrl" style="text-align: left">
+                                            <li><strong> Cost : </strong> $149.99 </li>
+                                            <li ng-click="isCollapsed = !isCollapsed"><strong> Technical Specification</strong></li>
+                                            <div class="row-fluid" collapse="!isCollapsed">
+                                                <ul style="list-style: none">
+                                                    <li><strong> Air quality Screening : </strong> Yes </li>
+                                                    <li><strong> Daily Report : </strong> Yes </li>
+                                                    <li><strong> Body Fat : </strong> Yes </li>
+                                                </ul>
+                                            </div>
+                                            <li popover-placement="right" popover-title="Options" popover-append-to-body="true" popover="SMS,Email"><strong>Modalities</strong></li>
+                                            <!--forcing background-color since it does not render as expected-->
+                                            <li popover-placement="right" popover-title="Requires" popover-append-to-body="true" popover="Smartphone" style="background-color: #f9f9f9;"><strong>Usability</strong></li>
+                                        </ul>
+                                    </div>
+                                    <footer>
+                                        <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/qardiobasebodycomp.png')">Prescribe this</a>
+                                    </footer>
+                                </section>
+                            </div>
+                            <div class="col-md-3 col-lg-3 col-xsm-6">
+                                <section class="pricing-table pricing-table-success">
+                                    <header><img style="width: 100%;" src="../images/device-images/tanitabodycomp.png"></header>
+                                    <div class="pricing-body">
+                                        <div class="pricing-price btn btn-success" style="display:block;" wz-previous="addDevice('{{devCat}}','../images/device-images/tanitabodycomp.png')">
+                                            <strong>Tanita Body Composition</strong>
+                                        </div>
+                                        <ul data-ng-controller="CollapseDemoCtrl" style="text-align: left">
+                                            <li><strong> Cost : </strong> $149.99 </li>
+                                            <li ng-click="isCollapsed = !isCollapsed"><strong> Technical Specification</strong></li>
+                                            <div class="row-fluid" collapse="!isCollapsed">
+                                                <ul style="list-style: none">
+                                                    <li><strong> Air quality Screening : </strong> Yes </li>
+                                                    <li><strong> Daily Report : </strong> Yes </li>
+                                                    <li><strong> Body Fat : </strong> Yes </li>
+                                                </ul>
+                                            </div>
+                                            <li popover-placement="right" popover-title="Options" popover-append-to-body="true" popover="SMS,Email"><strong>Modalities</strong></li>
+                                            <!--forcing background-color since it does not render as expected-->
+                                            <li popover-placement="right" popover-title="Requires" popover-append-to-body="true" popover="Smartphone" style="background-color: #f9f9f9;"><strong>Usability</strong></li>
+                                        </ul>
+                                    </div>
+                                    <footer>
+                                        <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/tanitabodycomp.png')">Prescribe this</a>
+                                    </footer>
+                                </section>
+                            </div>
+                            <div class="col-md-3 col-lg-3 col-xsm-6">
+                                <section class="pricing-table pricing-table-success">
+                                    <header><img style="width: 100%;" src="../images/device-images/withingssmartbodycomp.png"></header>
+                                    <div class="pricing-body">
+                                        <div class="pricing-price btn btn-success" style="display:block;" wz-previous="addDevice('{{devCat}}','../images/device-images/withingssmartbodycomp.png')">
+                                            <strong>Withings Smart Body Compostion</strong>
+                                        </div>
+                                        <ul data-ng-controller="CollapseDemoCtrl" style="text-align: left">
+                                            <li><strong> Cost : </strong> $149.99 </li>
+                                            <li ng-click="isCollapsed = !isCollapsed"><strong> Technical Specification</strong></li>
+                                            <div class="row-fluid" collapse="!isCollapsed">
+                                                <ul style="list-style: none">
+                                                    <li><strong> Air quality Screening : </strong> Yes </li>
+                                                    <li><strong> Daily Report : </strong> Yes </li>
+                                                    <li><strong> Body Fat : </strong> Yes </li>
+                                                </ul>
+                                            </div>
+                                            <li popover-placement="right" popover-title="Options" popover-append-to-body="true" popover="SMS,Email"><strong>Modalities</strong></li>
+                                            <!--forcing background-color since it does not render as expected-->
+                                            <li popover-placement="right" popover-title="Requires" popover-append-to-body="true" popover="Smartphone" style="background-color: #f9f9f9;"><strong>Usability</strong></li>
+                                        </ul>
+                                    </div>
+                                    <footer>
+                                        <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/withingssmartbodycomp.png')">Prescribe this</a>
+                                    </footer>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="row" ng-switch-when="Oximeter">
+                            <div class="col-md-3 col-lg-3 col-xsm-6">
+                                <section class="pricing-table pricing-table-success">
+                                    <header><img style="width: 100%;" src="../images/device-images/scoutECG.png"></header>
+                                    <div class="pricing-body">
+                                        <div class="pricing-price btn btn-success" style="display:block;" wz-previous="addDevice('{{devCat}}','../images/device-images/scoutECG.png')">
+                                            <strong>Scout ECG</strong>
+                                        </div>
+                                        <ul data-ng-controller="CollapseDemoCtrl" style="text-align: left">
+                                            <li><strong> Cost : </strong> $149.99 </li>
+                                            <li ng-click="isCollapsed = !isCollapsed"><strong> Technical Specification</strong></li>
+                                            <div class="row-fluid" collapse="!isCollapsed">
+                                                <ul style="list-style: none">
+                                                    <li><strong> Air quality Screening : </strong> Yes </li>
+                                                    <li><strong> Daily Report : </strong> Yes </li>
+                                                    <li><strong> Body Fat : </strong> Yes </li>
+                                                </ul>
+                                            </div>
+                                            <li popover-placement="right" popover-title="Options" popover-append-to-body="true" popover="SMS,Email"><strong>Modalities</strong></li>
+                                            <!--forcing background-color since it does not render as expected-->
+                                            <li popover-placement="right" popover-title="Requires" popover-append-to-body="true" popover="Smartphone" style="background-color: #f9f9f9;"><strong>Usability</strong></li>
+                                        </ul>
+                                    </div>
+                                    <footer>
+                                        <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/scoutECG.png')">Prescribe this</a>
+                                    </footer>
+                                </section>
+                            </div>
+                            <div class="col-md-3 col-lg-3 col-xsm-6">
+                                <section class="pricing-table pricing-table-success">
+                                    <header><img style="width: 100%;" src="../images/device-images/amiigoOximeter.png"></header>
+                                    <div class="pricing-body">
+                                        <div class="pricing-price btn btn-success" style="display:block;" wz-previous="addDevice('{{devCat}}','../images/device-images/amiigoOximeter.png')">
+                                            <strong>Amigo Oximeter</strong>
+                                        </div>
+                                        <ul data-ng-controller="CollapseDemoCtrl" style="text-align: left">
+                                            <li><strong> Cost : </strong> $149.99 </li>
+                                            <li ng-click="isCollapsed = !isCollapsed"><strong> Technical Specification</strong></li>
+                                            <div class="row-fluid" collapse="!isCollapsed">
+                                                <ul style="list-style: none">
+                                                    <li><strong> Air quality Screening : </strong> Yes </li>
+                                                    <li><strong> Daily Report : </strong> Yes </li>
+                                                    <li><strong> Body Fat : </strong> Yes </li>
+                                                </ul>
+                                            </div>
+                                            <li popover-placement="right" popover-title="Options" popover-append-to-body="true" popover="SMS,Email"><strong>Modalities</strong></li>
+                                            <!--forcing background-color since it does not render as expected-->
+                                            <li popover-placement="right" popover-title="Requires" popover-append-to-body="true" popover="Smartphone" style="background-color: #f9f9f9;"><strong>Usability</strong></li>
+                                        </ul>
+                                    </div>
+                                    <footer>
+                                        <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/amiigoOximeter.png')">Prescribe this</a>
+                                    </footer>
+                                </section>
+                            </div>
+                            <div class="col-md-3 col-lg-3 col-xsm-6">
+                                <section class="pricing-table pricing-table-success">
+                                    <header><img style="width: 100%;" src="../images/device-images/tenkeOximeter.png"></header>
+                                    <div class="pricing-body">
+                                        <div class="pricing-price btn btn-success" style="display:block;" wz-previous="addDevice('{{devCat}}','../images/device-images/tenkeOximeter.png')">
+                                            <strong>Tinke Oximeter</strong>
+                                        </div>
+                                        <ul data-ng-controller="CollapseDemoCtrl" style="text-align: left">
+                                            <li><strong> Cost : </strong> $149.99 </li>
+                                            <li ng-click="isCollapsed = !isCollapsed"><strong> Technical Specification</strong></li>
+                                            <div class="row-fluid" collapse="!isCollapsed">
+                                                <ul style="list-style: none">
+                                                    <li><strong> Air quality Screening : </strong> Yes </li>
+                                                    <li><strong> Daily Report : </strong> Yes </li>
+                                                    <li><strong> Body Fat : </strong> Yes </li>
+                                                </ul>
+                                            </div>
+                                            <li popover-placement="right" popover-title="Options" popover-append-to-body="true" popover="SMS,Email"><strong>Modalities</strong></li>
+                                            <!--forcing background-color since it does not render as expected-->
+                                            <li popover-placement="right" popover-title="Requires" popover-append-to-body="true" popover="Smartphone" style="background-color: #f9f9f9;"><strong>Usability</strong></li>
+                                        </ul>
+                                    </div>
+                                    <footer>
+                                        <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/tenkeOximeter.png')">Prescribe this</a>
+                                    </footer>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="row" ng-switch-when="Blood Pressure Monitor">
+                            <div class="col-md-3 col-lg-3 col-xsm-6">
+                                <section class="pricing-table pricing-table-success">
+                                    <header><img style="width: 100%;" src="../images/device-images/blipBP.png"></header>
+                                    <div class="pricing-body">
+                                        <div class="pricing-price btn btn-success" style="display:block;" wz-previous="addDevice('{{devCat}}','../images/device-images/blipBP.png')">
+                                            <strong>Blip BP</strong>
+                                        </div>
+                                        <ul data-ng-controller="CollapseDemoCtrl" style="text-align: left">
+                                            <li><strong> Cost : </strong> $149.99 </li>
+                                            <li ng-click="isCollapsed = !isCollapsed"><strong> Technical Specification</strong></li>
+                                            <div class="row-fluid" collapse="!isCollapsed">
+                                                <ul style="list-style: none">
+                                                    <li><strong> Air quality Screening : </strong> Yes </li>
+                                                    <li><strong> Daily Report : </strong> Yes </li>
+                                                    <li><strong> Body Fat : </strong> Yes </li>
+                                                </ul>
+                                            </div>
+                                            <li popover-placement="right" popover-title="Options" popover-append-to-body="true" popover="SMS,Email"><strong>Modalities</strong></li>
+                                            <!--forcing background-color since it does not render as expected-->
+                                            <li popover-placement="right" popover-title="Requires" popover-append-to-body="true" popover="Smartphone" style="background-color: #f9f9f9;"><strong>Usability</strong></li>
+                                        </ul>
+                                    </div>
+                                    <footer>
+                                        <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/blipBP.png')">Prescribe this</a>
+                                    </footer>
+                                </section>
+                            </div>
+                            <div class="col-md-3 col-lg-3 col-xsm-6">
+                                <section class="pricing-table pricing-table-success">
+                                    <header><img style="width: 100%;" src="../images/device-images/ihealthBP.png"></header>
+                                    <div class="pricing-body">
+                                        <div class="pricing-price btn btn-success" style="display:block;" wz-previous="addDevice('{{devCat}}','../images/device-images/ihealthBP.png')">
+                                            <strong>iHealth BP</strong>
+                                        </div>
+                                        <ul data-ng-controller="CollapseDemoCtrl" style="text-align: left">
+                                            <li><strong> Cost : </strong> $149.99 </li>
+                                            <li ng-click="isCollapsed = !isCollapsed"><strong> Technical Specification</strong></li>
+                                            <div class="row-fluid" collapse="!isCollapsed">
+                                                <ul style="list-style: none">
+                                                    <li><strong> Air quality Screening : </strong> Yes </li>
+                                                    <li><strong> Daily Report : </strong> Yes </li>
+                                                    <li><strong> Body Fat : </strong> Yes </li>
+                                                </ul>
+                                            </div>
+                                            <li popover-placement="right" popover-title="Options" popover-append-to-body="true" popover="SMS,Email"><strong>Modalities</strong></li>
+                                            <!--forcing background-color since it does not render as expected-->
+                                            <li popover-placement="right" popover-title="Requires" popover-append-to-body="true" popover="Smartphone" style="background-color: #f9f9f9;"><strong>Usability</strong></li>
+                                        </ul>
+                                    </div>
+                                    <footer>
+                                        <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/ihealthBP.png')">Prescribe this</a>
+                                    </footer>
+                                </section>
+                            </div>
+                            <div class="col-md-3 col-lg-3 col-xsm-6">
+                                <section class="pricing-table pricing-table-success">
+                                    <header><img style="width: 100%;" src="../images/device-images/withingsBP.png"></header>
+                                    <div class="pricing-body">
+                                        <div class="pricing-price btn btn-success" style="display:block;" wz-previous="addDevice('{{devCat}}','../images/device-images/withingsBP.png')">
+                                            <strong>Withings BP</strong>
+                                        </div>
+                                        <ul data-ng-controller="CollapseDemoCtrl" style="text-align: left">
+                                            <li><strong> Cost : </strong> $149.99 </li>
+                                            <li ng-click="isCollapsed = !isCollapsed"><strong> Technical Specification</strong></li>
+                                            <div class="row-fluid" collapse="!isCollapsed">
+                                                <ul style="list-style: none">
+                                                    <li><strong> Air quality Screening : </strong> Yes </li>
+                                                    <li><strong> Daily Report : </strong> Yes </li>
+                                                    <li><strong> Body Fat : </strong> Yes </li>
+                                                </ul>
+                                            </div>
+                                            <li popover-placement="right" popover-title="Options" popover-append-to-body="true" popover="SMS,Email"><strong>Modalities</strong></li>
+                                            <!--forcing background-color since it does not render as expected-->
+                                            <li popover-placement="right" popover-title="Requires" popover-append-to-body="true" popover="Smartphone" style="background-color: #f9f9f9;"><strong>Usability</strong></li>
+                                        </ul>
+                                    </div>
+                                    <footer>
+                                        <a href="javascript:;" class="btn btn-success" wz-previous="addDevice('{{devCat}}','../images/device-images/withingsBP.png')">Prescribe this</a>
+                                    </footer>
+                                </section>
+                            </div>
+                        </div>
                     </form>
                     <buttton class="btn btn-primary prevStyle" wz-previous>Previous</buttton>
                 </wz-step>
