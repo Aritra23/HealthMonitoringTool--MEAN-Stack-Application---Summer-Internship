@@ -3,31 +3,34 @@
  */
 (function () {
     'use strict';
-    angular.module('app.ui').factory('searchDeviceFactory', ['$http',function ($http) {
+    angular.module('app.ui').factory('searchDeviceFactory', ['$http','$q',function ($http,$q) {
         var baseUrl = "http://localhost:9000/mongoapi";
             return {
-            sayHello: function () {
-                return "Calling MongoDB";
-            },
             getAllFeatures : function(){
-                $http({
-                  url: baseUrl + '/getAllFeatures',
-                  method : 'GET'
-              }).success(function(res){
-                      console.log('Connected to MongoDB', res);
-                      return res;
-                  })
-                    .error(function(){
-                        console.log("Could not connect to Mongo!!!");
-                        return;
+                return $http({
+                    url: baseUrl + '/getAllFeatures',
+                    method : 'GET'
+                }).then(
+                    function(payload) {
+                        console.log("Response inside promise ::::",payload.data);
+                        return payload.data;
                     });
-
-          }
+          },
+            getAllDiseases :function(){
+                return $http({
+                    url: baseUrl + '/getAllDiseases',
+                    method : 'GET'
+                }).then(
+                    function(payload) {
+                        console.log("Response inside promise ::::",payload.data);
+                        return payload.data;
+                    });
+            }
         }
     }]
     )
     .controller('searchDeviceCtrl', [
-        '$scope', '$location', '$rootScope', '$route', '$document','filterFilter','logger','WizardHandler','$timeout','searchDeviceFactory', function($scope, $location, $rootScope, $route, $document,filterFilter,logger,WizardHandler,$timeout,searchDeviceFactory) {
+        '$scope', '$location', '$rootScope', '$route', '$document','filterFilter','logger','WizardHandler','$timeout','searchDeviceFactory','$q', function($scope, $location, $rootScope, $route, $document,filterFilter,logger,WizardHandler,$timeout,searchDeviceFactory,$q) {
 
             //scope variable initialization
             $scope.unusualList = [];
@@ -35,10 +38,24 @@
                 symptom: '',
                 inpError : false
             };
-
+            $scope.test = [];
 
             //testing factory
-            console.log('Response::::',searchDeviceFactory.getAllFeatures());
+                var getAllDiseases = function() {
+                    searchDeviceFactory.getAllDiseases()
+                        .then(function(data) {
+                            $scope.test = data;
+                        });
+                };
+                getAllDiseases();
+             console.log("Scope variable::",$scope.test);
+
+
+                // watch the scope variables set from MongoDB call
+                $scope.$watch('test',function(newValue, oldValue){
+                    console.log("Inside test watch New Value ::" + newValue + "Old Value :::" + oldValue);
+                },true);
+
 
             //replaceAll function
             String.prototype.replaceAll = function(s,r){return this.split(s).join(r).trim()};
@@ -138,7 +155,6 @@
                     //$scope.diseaseSelection = ["Heart Failure"];
                     //making default selection to be HF for single select
                     $scope.diseaseSelection = "Heart Failure";
-
                 }
 
                 //pull from database risk factors for each disease using a service call or find an optimization
@@ -179,7 +195,6 @@
                 else{
                     $scope.wizard.inpError = true;
                 }
-
             };
 
             $scope.notify = function(type) {
@@ -206,10 +221,8 @@
                 for(var val in $scope.deviceCategory){
                     if(devCat == $scope.deviceCategory[val].name){
                         $scope.deviceCategory[val].imgsrc = devSrc;
-                        //console.log($scope.deviceCategory[val]);
                     }
                 }
-
             }
 
             return $scope.finishedWizard = function() {
