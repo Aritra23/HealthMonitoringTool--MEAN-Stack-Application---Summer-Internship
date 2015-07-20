@@ -48,8 +48,6 @@
                         });
                 };
                 getAllDiseases();
-             console.log("Scope variable::",$scope.test);
-
 
                 // watch the scope variables set from MongoDB call
                 $scope.$watch('test',function(newValue, oldValue){

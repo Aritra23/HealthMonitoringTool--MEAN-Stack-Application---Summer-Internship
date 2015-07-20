@@ -360,8 +360,8 @@ module.exports = function(grunt) {
     if (target === "dist") {
       return grunt.task.run(["build", "open", "connect:dist:keepalive"]);
     }
-    return grunt.task.run(["clean:server", "concurrent:server", "connect:livereload", "open", "watch"]);
+    return grunt.task.run(["clean:server", "concurrent:server", "connect:livereload", "open", "watch","injector"]);
   });
-  grunt.registerTask("build", ["clean:dist", "useminPrepare", "concurrent:dist", "copy:dist", "cssmin", "concat", "uglify", "usemin"]);
+  grunt.registerTask("build", ["clean:dist", "useminPrepare", "concurrent:dist", "copy:dist", "cssmin", "concat", "uglify", "usemin","injector"]);
   return grunt.registerTask("default", ["serve"]);
 };

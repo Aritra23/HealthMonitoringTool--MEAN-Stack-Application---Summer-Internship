@@ -21,7 +21,6 @@
                             console.log("Could not connect to Mongo!!!");
                             return;
                         });
-
                 }
             }
         }]
