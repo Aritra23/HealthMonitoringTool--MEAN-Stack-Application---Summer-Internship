@@ -1,6 +1,8 @@
 //"use strict";
 var LIVERELOAD_PORT, lrSnippet, mountFolder;
 
+var path = require('path');
+
 LIVERELOAD_PORT = 35728;
 
 lrSnippet = require("connect-livereload")({
@@ -56,8 +58,22 @@ module.exports = function(grunt) {
     },
     express: {
       options: {
-              port: process.env.PORT || 9000
+          port: process.env.PORT || 9000,
           },
+      livereload: {
+            options: {
+                server: path.resolve('./server'),
+                livereload: true,
+                serverreload: true,
+                bases: [path.resolve('./.tmp'), path.resolve(__dirname, yeomanConfig.app)]
+            }
+        },
+        dist: {
+            options: {
+                server: path.resolve('./server'),
+                bases: path.resolve(__dirname, yeomanConfig.dist)
+            }
+        },
         dev: {
               options: {
                   script: 'server/app.js',
@@ -344,8 +360,8 @@ module.exports = function(grunt) {
     if (target === "dist") {
       return grunt.task.run(["build", "open", "connect:dist:keepalive"]);
     }
-    return grunt.task.run(["clean:server", "concurrent:server", "connect:livereload", "open", "watch"]);
+    return grunt.task.run(["clean:server", "concurrent:server", "connect:livereload", "open", "watch","injector"]);
   });
-  grunt.registerTask("build", ["clean:dist", "useminPrepare", "concurrent:dist", "copy:dist", "cssmin", "concat", "uglify", "usemin"]);
+  grunt.registerTask("build", ["clean:dist", "useminPrepare", "concurrent:dist", "copy:dist", "cssmin", "concat", "uglify", "usemin","injector"]);
   return grunt.registerTask("default", ["serve"]);
 };

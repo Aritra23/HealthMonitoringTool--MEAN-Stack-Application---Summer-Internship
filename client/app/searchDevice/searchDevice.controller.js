@@ -2,6 +2,7 @@
  * Created by Dilip on 6/2/2015.
  */
 (function () {
+<<<<<<< HEAD
     //'use strict';
     angular.module('app.ui').factory('searchDeviceFactory', ['$http', function ($http) {
             var baseUrl = "http://localhost:9000/mongoapi";
@@ -83,6 +84,60 @@
                         console.log("DL:", $scope.diseaseList);
                         console.log("Value is set");
                     }
+=======
+    'use strict';
+    angular.module('app.ui').factory('searchDeviceFactory', ['$http','$q',function ($http,$q) {
+        var baseUrl = "http://localhost:9000/mongoapi";
+            return {
+            getAllFeatures : function(){
+                return $http({
+                    url: baseUrl + '/getAllFeatures',
+                    method : 'GET'
+                }).then(
+                    function(payload) {
+                        console.log("Response inside promise ::::",payload.data);
+                        return payload.data;
+                    });
+          },
+            getAllDiseases :function(){
+                return $http({
+                    url: baseUrl + '/getAllDiseases',
+                    method : 'GET'
+                }).then(
+                    function(payload) {
+                        console.log("Response inside promise ::::",payload.data);
+                        return payload.data;
+                    });
+            }
+        }
+    }]
+    )
+    .controller('searchDeviceCtrl', [
+        '$scope', '$location', '$rootScope', '$route', '$document','filterFilter','logger','WizardHandler','$timeout','searchDeviceFactory','$q', function($scope, $location, $rootScope, $route, $document,filterFilter,logger,WizardHandler,$timeout,searchDeviceFactory,$q) {
+
+            //scope variable initialization
+            $scope.unusualList = [];
+            $scope.wizard = {
+                symptom: '',
+                inpError : false
+            };
+            $scope.test = [];
+
+            //testing factory
+                var getAllDiseases = function() {
+                    searchDeviceFactory.getAllDiseases()
+                        .then(function(data) {
+                            $scope.test = data;
+                        });
+                };
+                getAllDiseases();
+
+                // watch the scope variables set from MongoDB call
+                $scope.$watch('test',function(newValue, oldValue){
+                    console.log("Inside test watch New Value ::" + newValue + "Old Value :::" + oldValue);
+                },true);
+
+>>>>>>> 9e0fef27fa6f7ab2c9477c8a67df756e025f211c
 
 
                 },true);
@@ -263,6 +318,7 @@
 
                 var rfAll = ["Weight", "BMI", "Resting Heart Rate", "Blood Pressure", "Oxygen Saturation", "Activity", "Forced Expiratory Volume", "Peak Expiratory Flow", "Ventilation-Perfusion Ratio", "Tobacco Cessation", "Heart Rate", "Heart Rhythm", "Blood Glucose", "HbA1c"];
 
+<<<<<<< HEAD
                 // hardcoding device features
                 var df = ["Cost", "Smartphone Connectivity", "BP", "ECG", "HR", "SpO2", "Resp. Rate", "Steps", "Distance", "Calories", "Position", "Sleep", "Glucose", "EEG", "GSR", "Weight", "Fat %", "BMI", "Hydration", "Temperature"];
                 $scope.deviceFeatures = convertArrToJson(df);
@@ -273,6 +329,50 @@
                     {name: "Activity Tracker", imgsrc: ""},
                     {name: "Heart Rate Monitor", imgsrc: ""},
                     {name: "Oximeter", imgsrc: ""}];
+=======
+            //filter selection
+            $scope.selectedDiseases = function selectedDiseases() {
+                return filterFilter($scope.diseaseList, { selected: true });
+            };
+            $scope.selectedRisks = function selectedRisks(){
+                return filterFilter($scope.riskFactors, { selected: true });
+            };
+            $scope.selectedFeatures = function selectedFeatures(){
+                return filterFilter($scope.deviceFeatures, { selected: true });
+            };
+
+            //watchers
+            $scope.$watch('diseaseList|filter:{selected:true}', function (nv) {
+                $scope.diseaseSelection = nv.map(function (item) {
+                    return item.name;
+                });
+            }, true);
+            $scope.$watch('riskFactors|filter:{selected:true}', function (nv) {
+                $scope.riskSelection = nv.map(function (item) {
+                    return item.name;
+                });
+            }, true);
+            $scope.$watch('otherRisks|filter:{selected:true}', function (nv) {
+                $scope.riskSelection = nv.map(function (item) {
+                    return item.name;
+                });
+            }, true);
+            $scope.$watch('deviceFeatures|filter:{selected:true}', function (nv) {
+                $scope.featureSelection = nv.map(function (item) {
+                    return item.name;
+                });
+            }, true);
+
+            $scope.isValidateStep1 = function(val) {
+                $scope.diseaseSelection = val;
+
+                if($scope.diseaseSelection.length == 0){
+                    //making default selection to be HF for multiselect
+                    //$scope.diseaseSelection = ["Heart Failure"];
+                    //making default selection to be HF for single select
+                    $scope.diseaseSelection = "Heart Failure";
+                }
+>>>>>>> 9e0fef27fa6f7ab2c9477c8a67df756e025f211c
 
                 //assigning image source to device category
                 for (var item in $scope.deviceCategory) {
@@ -312,6 +412,7 @@
                     });
                 }, true);
 
+<<<<<<< HEAD
                 $scope.isValidateStep1 = function (val) {
                     $scope.diseaseSelection = val;
 
@@ -320,6 +421,32 @@
                         //$scope.diseaseSelection = ["Heart Failure"];
                         //making default selection to be HF for single select
                         $scope.diseaseSelection = "Heart Failure";
+=======
+                $scope.riskFactors = convertArrToJson(rf);
+                $scope.otherRisks = convertArrToJson(_.difference(rfAll,rf));
+            };
+
+            // function to validate risk factor selection
+            $scope.isValidateStep2 = function(){
+                // $scope.riskSelection contains the selected risk factors
+            };
+
+            // function to validate device category
+            $scope.isValidateStep3 = function(devCat){
+                $scope.devCat = devCat;
+            };
+
+            $scope.addUnusualSymptom = function(){
+                if($scope.wizard.symptom != '' && !angular.isUndefined($scope.wizard.symptom)){
+                    $scope.unusualList.push($scope.wizard.symptom);
+                    $scope.wizard.symptom = '';
+                    $scope.wizard.inpError = false;
+                }
+                else{
+                    $scope.wizard.inpError = true;
+                }
+            };
+>>>>>>> 9e0fef27fa6f7ab2c9477c8a67df756e025f211c
 
                     }
 
@@ -338,6 +465,7 @@
                         rf = ["Blood Glucose", "Weight", "Activity/Exercise", "HbA1c"];
                     }
 
+<<<<<<< HEAD
                     $scope.riskFactors = convertArrToJson(rf);
                     $scope.otherRisks = convertArrToJson(_.difference(rfAll, rf));
                 };
@@ -399,6 +527,15 @@
 
                 ]);
 
+=======
+            $scope.addDevice = function(devCat,devSrc){
+                for(var val in $scope.deviceCategory){
+                    if(devCat == $scope.deviceCategory[val].name){
+                        $scope.deviceCategory[val].imgsrc = devSrc;
+                    }
+                }
+            }
+>>>>>>> 9e0fef27fa6f7ab2c9477c8a67df756e025f211c
 
 })();
 
