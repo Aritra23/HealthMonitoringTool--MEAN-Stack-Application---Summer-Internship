@@ -24,62 +24,119 @@
                         });
 
                 },
-                getAllDiseases: function () {
-                    $http({
+                getAllDiseases :function(){
+                    return $http({
                         url: baseUrl + '/getAllDiseases',
-                        method: 'GET'
-                    }).success(function (responseData) {
-                        // dataCtrl.data = data;
-                        console.log("Connection successful", responseData);
-                        return responseData;
-                    })
-                        .error(function () {
-                            console.log("Could not connect to Mongo");
-                            return;
-                        })
+                        method : 'GET'
+                    }).then(
+                        function(payload) {
+                            console.log("Response inside promise ::::",payload.data);
+                            //console.log("Response:",payload.data.name);
+                            return payload.data;
+                        });
                 }
             }
         }]
     )
         .controller('searchDeviceCtrl', [
-            '$scope', '$location', '$rootScope', '$route', '$document', 'filterFilter', 'logger', 'WizardHandler', '$timeout', 'searchDeviceFactory', 'responseData', function ($scope, $location, $rootScope, $route, $document, filterFilter, logger, WizardHandler, $timeout, searchDeviceFactory,responseData) {
+            '$scope', '$location', '$rootScope', '$route', '$document', 'filterFilter', 'logger', 'WizardHandler', '$timeout', 'searchDeviceFactory', function ($scope, $location, $rootScope, $route, $document, filterFilter, logger, WizardHandler, $timeout, searchDeviceFactory) {
+
 
                 //scope variable initialization
                 $scope.unusualList = [];
                 $scope.wizard = {
                     symptom: '',
-                    inpError: false
+                    inpError : false
                 };
-
+                $scope.diseaseList = [];
 
                 //testing factory
-                console.log('Response::::', searchDeviceFactory.getAllFeatures());
+                var getAllDiseases = function() {
+                    searchDeviceFactory.getAllDiseases()
+                        .then(function(data) {
+                            $scope.test = data;
 
-                console.log('Disease List', searchDeviceFactory.getAllDiseases());
 
-                //replaceAll function
-                String.prototype.replaceAll = function (s, r) {
-                    return this.split(s).join(r).trim()
+                        });
+                };
+                getAllDiseases();
+
+                // watch the scope variables set from MongoDB call
+                $scope.$watch('test',function(newValue, oldValue){
+                    console.log("Inside test watch New Value ::" + newValue + "Old Value :::" + oldValue);
+                    if(newValue) {
+
+                        //$scope.diseaseList.push(newValue);
+                        for(var item in $scope.test) {
+                            // $scope.diseaseList.push({name: $scope.diseaseList[item].name, selected:"false", imgsrc: ""});
+                            //$scope.diseaseList = $scope.test.Object.name;
+                            console.log($scope.test[item]);
+
+                            $scope.diseaseList.push({name: $scope.test[item].name, selected: "false", imgsrc: ""});
+                            for(var temp in $scope.diseaseList){
+                                $scope.diseaseList[temp].imgsrc = "../images/disease-images/"+$scope.diseaseList[temp].name.replaceAll(" ","")+".png";
+                            }
+
+
+
+                        }
+                        console.log("DL:", $scope.diseaseList);
+                        console.log("Value is set");
+                    }
+
+
+                },true);
+
+
+                $scope.diseaseSelection = [];
+
+                var getFeatures = function(){
+                    searchDeviceFactory.getAllDiseases().then(function(data){
+                        $scope.val =data;
+                    });
                 };
 
+                getFeatures();
 
-                //$scope.diseaseList = [];
-                //$scope.diseaseList = [];
-                //hardcoding diseases
-               /* $scope.diseaseList = [{name : "Heart Failure", selected : "false", imgsrc : ""},
-                 {name : "COPD", selected : "false", imgsrc : ""},
-                 {name : "Atrial Fibrillation", selected : "false", imgsrc : ""},
-                 {name : "Diabetes", selected : "false", imgsrc : ""}];*/
 
-               function getDiseases() {
-                    searchDeviceFactory.getAllDiseases().then(function (responseData) {
-                        $scope.diseaseList = responseData;
-                        console.log("DL:", $scope.diseaseList);
-                    });
-                    for (var item in $scope.diseaseList) {
-                        $scope.diseaseList.push({name: $scope.diseaseList[item].name, selected: "false", imgsrc: ""});
+                $scope.$watch('val', function(newval, old)
+                {
+                    console.log("Inside test watch New Variable ::" + newval + "Old Value:" + old);
+                    if(newval){
+                        for(var itemid in $scope.val){
+                            console.log($scope.val[itemid]);
+                            $scope.diseaseSelection.push({name: $scope.val[itemid].name, keymetrics: $scope.val[itemid].keymetrics});
+
+
+                        }
+                        for(var tmp in $scope.diseaseSelection){
+                            if($scope.diseaseSelection[tmp].name == "Heart Failure"){
+                                $scope.riskFactors = $scope.diseaseSelection[tmp].keymetrics;
+                            }
+                            if($scope.diseaseSelection[tmp].name == "COPD"){
+                                $scope.riskFactors = $scope.diseaseSelection[tmp].keymetrics;
+                            }
+                            if($scope.diseaseSelection[tmp].name == "Atrial Fibrillation"){
+                                $scope.riskFactors = $scope.diseaseSelection[tmp].keymetrics;
+                            }
+                            if($scope.diseaseSelection[tmp].name == "Diabetes"){
+                                $scope.riskFactors = $scope.diseaseSelection[tmp].keymetrics;
+                            }
+                        }
                     }
-                }
+
+                },true);
+
+
+                /*function getDiseases() {
+                     searchDeviceFactory.getAllDiseases().then(function (responseData) {
+                         $scope.diseaseList = responseData;
+                         console.log("DL:", $scope.diseaseList);
+                     });
+                     for (var item in $scope.diseaseList) {
+                         $scope.diseaseList.push({name: $scope.diseaseList[item].name, selected: "false", imgsrc: ""});
+                     }
+                 }*/
 
 
                 /* function getDiseases(){
